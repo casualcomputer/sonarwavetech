@@ -8,6 +8,7 @@ RUN yarn install --frozen-lockfile
 
 # Build and export
 COPY . .
+ENV NODE_OPTIONS="--openssl-legacy-provider"
 RUN yarn build-prod  # next build + export → /app/out
 
 # Serve with Nginx
