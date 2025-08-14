@@ -85,7 +85,11 @@ const About = () => {
               rel="noreferrer"
               className="flex items-center"
             >
-              <img src="/assets/images/medium.svg" alt="Medium" className="w-6 h-6" />
+              <img
+                src="/assets/images/medium.svg"
+                alt="Medium"
+                className="w-6 h-6"
+              />
             </a>
           )}
         </div>
