@@ -183,7 +183,7 @@
       }
     ],
     "footer": {
-      "text": "© 2025 SonarWave Technologies Inc. — Designed by Your Team",
+      "text": "© 2025 SonarWave Technologies Inc.",
       "links": [
         { "name": "About", "href": "#about" },
         { "name": "Solutions", "href": "#solutions" },
