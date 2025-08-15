@@ -11,7 +11,7 @@ Secondary CTA: See Case Studies
 About / Intro Section
 Title: Plug & Play AI for Your Business
 Description:
-SonarWave Technologies Inc. builds tailor-made AI systems designed to optimize your workflows and accelerate growth. Update your configuration and assets to make this page your own.
+SonarWave Technologies Inc. builds tailor-made AI systems designed to optimize your workflows and accelerate growth.
 
 Features Section (Latest & Greatest)
 Title: What We Build
@@ -67,3 +67,20 @@ Footer
 Text:
 © 2025 SonarWave Technologies Inc. — Designed by Your Team
 Links: About | Solutions | Case Studies | Contact | Privacy Policy
+
+
+# Navigate to your project directory
+cd ~/sonarwave
+
+# Stop and remove the current container
+docker stop sonarwave
+docker rm sonarwave
+
+# Rebuild the image with your latest changes
+docker build -t sonarwave-website:latest .
+
+# Run the new container
+docker run -d --name sonarwave -p 8080:80 sonarwave-website:latest
+
+# Check if it's running
+docker ps
