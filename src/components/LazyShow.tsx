@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useRef, useState, ReactNode } from "react";
+import type { MutableRefObject, ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
 
