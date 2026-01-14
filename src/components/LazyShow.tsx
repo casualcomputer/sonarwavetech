@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState, ReactNode } from "react";
 
 import { motion, useAnimation } from "framer-motion";
 
@@ -30,7 +30,7 @@ function useOnScreen(
   return isIntersecting;
 }
 
-const LazyShow = ({ children }: { children: React.ReactChild }) => {
+const LazyShow = ({ children }: { children: ReactNode }) => {
   const controls = useAnimation();
   const rootRef = useRef<HTMLDivElement>(null);
   const onScreen = useOnScreen(rootRef);
