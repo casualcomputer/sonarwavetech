@@ -1,7 +1,6 @@
 // import React from "react";
 
 import About from "../components/About";
-import Analytics from "../components/Analytics";
 import Canvas from "../components/Canvas";
 import CaseStudies from "../components/CaseStudies";
 import Features from "../components/Features";
@@ -50,7 +49,6 @@ const App = () => {
           <About />
         </>
       </LazyShow>
-      <Analytics />
     </div>
   );
 };

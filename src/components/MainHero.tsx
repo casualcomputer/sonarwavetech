@@ -1,6 +1,7 @@
 // import React from "react";
 
 import config from "../config/index.json";
+import { event as trackEvent } from "../lib/gtag";
 
 const MainHero = () => {
   const { mainHero } = config;
@@ -20,6 +21,13 @@ const MainHero = () => {
           <div className="rounded-md shadow">
             <a
               href={mainHero.primaryAction.href}
+              onClick={() =>
+                trackEvent({
+                  action: "contact_click",
+                  category: "engagement",
+                  label: "hero_primary_cta",
+                })
+              }
               className={`w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-background bg-primary hover:bg-border hover:text-primary md:py-4 md:text-lg md:px-10`}
             >
               {mainHero.primaryAction.text}
@@ -28,6 +36,13 @@ const MainHero = () => {
           <div className="mt-3 sm:mt-0 sm:ml-3">
             <a
               href={mainHero.secondaryAction.href}
+              onClick={() =>
+                trackEvent({
+                  action: "navigation_click",
+                  category: "engagement",
+                  label: "hero_secondary_cta",
+                })
+              }
               className={`w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md border-primary text-secondary bg-background hover:bg-border hover:text-primary md:py-4 md:text-lg md:px-10`}
             >
               {mainHero.secondaryAction.text}
