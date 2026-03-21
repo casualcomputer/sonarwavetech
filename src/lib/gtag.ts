@@ -10,11 +10,11 @@ export const isTrackingEnabled = Boolean(GA_TRACKING_ID);
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
-  if (!isTrackingEnabled || typeof window.gtag !== "function") {
+  if (!isTrackingEnabled || typeof window.gtag !== 'function') {
     return;
   }
 
-  window.gtag("config", GA_TRACKING_ID, {
+  window.gtag('config', GA_TRACKING_ID, {
     page_path: url,
   });
 };
@@ -31,11 +31,11 @@ export const event = ({
   label?: string;
   value?: number;
 }) => {
-  if (!isTrackingEnabled || typeof window.gtag !== "function") {
+  if (!isTrackingEnabled || typeof window.gtag !== 'function') {
     return;
   }
 
-  window.gtag("event", action, {
+  window.gtag('event', action, {
     event_category: category,
     event_label: label,
     value,

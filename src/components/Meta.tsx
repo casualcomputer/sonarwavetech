@@ -1,9 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import { AppConfig } from "../utils/AppConfig";
+import { AppConfig } from '../utils/AppConfig';
 
 const Meta = () => {
-  const { title, description, site_name, site_url, og_image } = AppConfig;
+  const {
+    title,
+    description,
+    site_name: siteName,
+    site_url: siteUrl,
+    og_image: ogImage,
+  } = AppConfig;
 
   return (
     <Head>
@@ -15,14 +21,14 @@ const Meta = () => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:site_name" content={site_name} />
-      <meta property="og:url" content={site_url} />
-      <meta property="og:image" content={og_image} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:image" content={ogImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={og_image} />
-      <link rel="canonical" href={site_url} />
+      <meta name="twitter:image" content={ogImage} />
+      <link rel="canonical" href={siteUrl} />
     </Head>
   );
 };

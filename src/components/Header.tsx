@@ -1,11 +1,11 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-scroll";
+import { Popover, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Link } from 'react-scroll';
 
-import config from "../config/index.json";
-import { event as trackEvent } from "../lib/gtag";
+import config from '../config/index.json';
+import { event as trackEvent } from '../lib/gtag';
 
 const Menu = () => {
   const { navigation, company, callToAction } = config;
@@ -63,9 +63,9 @@ const Menu = () => {
                 href={callToAction.href}
                 onClick={() =>
                   trackEvent({
-                    action: "contact_click",
-                    category: "engagement",
-                    label: "header_cta",
+                    action: 'contact_click',
+                    category: 'engagement',
+                    label: 'header_cta',
                   })
                 }
                 className={`font-medium text-primary hover:text-secondary cursor-pointer`}
@@ -124,9 +124,9 @@ const Menu = () => {
                 href={callToAction.href}
                 onClick={() =>
                   trackEvent({
-                    action: "contact_click",
-                    category: "engagement",
-                    label: "mobile_header_cta",
+                    action: 'contact_click',
+                    category: 'engagement',
+                    label: 'mobile_header_cta',
                   })
                 }
                 className={`block w-full px-5 py-3 text-center font-medium text-primary bg-gray-50 hover:bg-gray-100`}

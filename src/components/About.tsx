@@ -22,9 +22,9 @@ const About = () => {
             href={primaryAction.href}
             onClick={() =>
               trackEvent({
-                action: "contact_click",
-                category: "engagement",
-                label: "footer_cta",
+                action: 'contact_click',
+                category: 'engagement',
+                label: 'footer_cta',
               })
             }
             className={`inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-opacity-90 md:py-4 md:text-lg md:px-10`}
