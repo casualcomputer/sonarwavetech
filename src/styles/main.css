@@ -835,12 +835,18 @@ h2 {
   line-height: 1.6;
   margin-top: 13px;
 }
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+}
 .contact-email {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: underline;
   text-underline-offset: 4px;
-  margin-top: 18px;
 }
 .site-footer {
   display: flex;

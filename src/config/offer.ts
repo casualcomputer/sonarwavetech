@@ -2,6 +2,8 @@ export const infrastructure = {
   name: 'AI Infrastructure & Deployment',
   entryName: 'Infrastructure Design & Procurement Plan',
   email: 'info@sonarwave.org',
+  phone: '+1 (647) 667-3518',
+  phoneHref: 'tel:+16476673518',
   stages: [
     {
       title: 'Define the system.',

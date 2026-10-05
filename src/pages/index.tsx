@@ -534,13 +534,22 @@ const App = () => {
                 Opens an email to SonarWave with three short prompts. Scope, fee
                 and schedule are agreed before paid work begins.
               </p>
-              <a
-                className="contact-email"
-                href={`mailto:${infrastructure.email}`}
-                onClick={trackContact}
-              >
-                {infrastructure.email}
-              </a>
+              <div className="contact-direct">
+                <a
+                  className="contact-email"
+                  href={infrastructure.phoneHref}
+                  onClick={trackContact}
+                >
+                  Call {infrastructure.phone}
+                </a>
+                <a
+                  className="contact-email"
+                  href={`mailto:${infrastructure.email}`}
+                  onClick={trackContact}
+                >
+                  {infrastructure.email}
+                </a>
+              </div>
             </div>
           </div>
         </section>
