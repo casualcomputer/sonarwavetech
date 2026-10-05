@@ -1,9 +1,9 @@
 export const AppConfig = {
   site_name: 'SonarWave Technologies',
-  title: 'SonarWave Technologies | Enterprise AI Solutions',
+  title: 'SonarWave | AI Infrastructure, Procurement & Delivery',
   description:
-    'SonarWave Technologies builds enterprise AI agents, automation pipelines, and custom language model solutions that improve productivity and reduce manual work.',
+    'AI infrastructure engineering, hardware procurement and production delivery. Requirements, workload benchmarks, OEM and reseller sourcing, deployment and scaling.',
   site_url: 'https://sonarwavetech.com',
-  og_image: '/assets/images/happyTeam.jpeg',
+  og_image: '/assets/images/logo.png',
   locale: 'en',
 };
