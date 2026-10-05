@@ -18,8 +18,8 @@ export const infrastructure = {
     {
       title: 'Source and deploy.',
       description:
-        'Compare quotes from OEMs, major resellers and specialist builders. Coordinate the selected server or workstation build, deploy the environment and verify it against the requirements.',
-      deliverable: 'Vendor comparison and tested deployment',
+        'Compare cost, allocation and lead times across OEMs, resellers and specialist builders. Coordinate the selected build and delivery schedule, deploy the environment and verify it against the requirements.',
+      deliverable: 'Vendor comparison, delivery schedule and tested deployment',
     },
     {
       title: 'Operate and scale.',
@@ -31,8 +31,8 @@ export const infrastructure = {
   deliverables: [
     'Agreed workload, response-time and concurrent-user targets',
     'Benchmark evidence, optimization options and known limitations',
-    'Comparable vendor quotes with cost and support tradeoffs',
-    'Recommended architecture and specifications for purchase',
+    'Vendor comparison covering total cost, allocation and delivery timelines',
+    'Hardware specifications aligned with your AI software requirements',
     'Deployment, security and acceptance-testing plan',
   ],
 };
@@ -46,7 +46,7 @@ export const faqs = [
   {
     question: 'We already have a vendor quote. Why get it reviewed?',
     answer:
-      'A quote specifies what a vendor will supply. Our technical review tests how that configuration fits your workload, user demand and operating requirements. We examine compatibility, bottlenecks, expansion, support and alternatives, then identify what needs clarification or validation before purchase. Existing quotes give us a practical starting point.',
+      'A quote specifies what a vendor will supply. We assess whether the proposed hardware supports your AI software and workload, and compare the total cost of ownership, including integration effort, ongoing support and expansion. We also review allocation and delivery timelines across vendor options so the buying decision supports your project schedule. Existing quotes give us a practical starting point.',
   },
   {
     question: 'Can you improve an existing AI deployment?',

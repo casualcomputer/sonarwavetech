@@ -102,9 +102,9 @@ const App = () => {
               <em>Before you commit.</em>
             </h1>
             <p className="hero-description">
-              Planning an AI rollout or major hardware purchase? Get a tested
-              specification, comparable vendor quotes and a documented
-              recommendation your team can act on.
+              Plan an AI rollout with hardware that supports your software,
+              workloads and growth. Get a tested specification, comparable
+              vendor quotes and a clear buying recommendation.
             </p>
             <div className="hero-actions">
               <a className="button button-red" href="#contact">
@@ -142,11 +142,11 @@ const App = () => {
                 ],
                 [
                   'What will it cost?',
-                  'Comparable quotes, support terms and operating assumptions',
+                  'Purchase, operating and engineering costs over the system’s life',
                 ],
                 [
-                  'How do we get it running?',
-                  'Deployment stages, operating controls and acceptance tests',
+                  'When can we get it running?',
+                  'Vendor allocation, delivery milestones and deployment planning',
                 ],
               ].map(([title, detail], i) => (
                 <li key={title}>
@@ -198,14 +198,15 @@ const App = () => {
           <div className="risk-grid">
             <article>
               <span className="eyebrow">CAPABILITY</span>
-              <h3>Features you can’t deliver.</h3>
+              <h3>Hardware that limits your software.</h3>
               <p>
-                A system can meet a parts list and still miss the application’s
-                needs. Memory limits, compatibility gaps or the wrong
-                environment can block planned capabilities.
+                Powerful hardware can still be the wrong fit for the AI training
+                or inference software your team needs. A mismatch can restrict
+                usable tools, block features and force changes to the software
+                stack.
               </p>
               <strong>
-                Map the features to the infrastructure before buying.
+                Protect your software options before committing to hardware.
               </strong>
             </article>
             <article>
@@ -222,18 +223,22 @@ const App = () => {
             </article>
             <article>
               <span className="eyebrow">REWORK</span>
-              <h3>Problems passed to developers.</h3>
+              <h3>Engineering time lost to workarounds.</h3>
               <p>
-                Missing isolation, audit logs or security routines can force
-                late architecture changes. Development time then goes into
-                compensating for decisions made upstream.
+                Incompatible hardware can pull developers into low-level
+                programming and debugging just to make their AI software run.
+                Repeated workarounds consume engineering time and compute budget
+                while product development and scaling wait.
               </p>
-              <strong>Design the operating requirements into the build.</strong>
+              <strong>
+                Buy for the full cost of ownership, including engineering
+                effort.
+              </strong>
             </article>
           </div>
           <p className="risk-takeaway">
-            The goal: make the tradeoffs visible while you can still change the
-            specification.
+            Keep your engineers focused on building and scaling, with hardware
+            decisions grounded in the software they need to use.
           </p>
         </section>
 
@@ -329,21 +334,23 @@ const App = () => {
             <article>
               <p className="eyebrow">HARDWARE SOURCING & BUILD COORDINATION</p>
               <h3>
-                A specification vendors can build.
-                <br />A system your team can use.
+                Hardware chosen for
+                <br />
+                the software you need.
               </h3>
               <p>
-                Work with OEM vendors, major resellers and custom system
-                builders on configured servers, workstations and tailored AI
-                hardware designs. Compare quotes against a common specification
-                and review proposed substitutions before ordering.
+                We bring AI software engineering knowledge into hardware
+                procurement, connecting your training, inference and deployment
+                needs to the buying decision. We work across OEMs, resellers and
+                custom builders to help secure hardware allocation and
+                coordinate delivery with your project schedule.
               </p>
               <ul>
                 <li>CPU, GPU, memory, storage and network configuration</li>
-                <li>Component compatibility, expansion and support options</li>
                 <li>
-                  Build requirements, availability and delivery dependencies
+                  AI software compatibility, expansion and support options
                 </li>
+                <li>Vendor allocation, lead times and delivery milestones</li>
               </ul>
             </article>
             <article>
