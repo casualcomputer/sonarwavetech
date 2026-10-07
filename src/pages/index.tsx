@@ -11,23 +11,9 @@ import {
   XIcon as FiX,
 } from '@heroicons/react/outline';
 
+import content from '../config/homepage.json';
 import { faqs, infrastructure } from '../config/offer';
 import * as gtag from '../lib/gtag';
-
-const contactHref = `mailto:${
-  infrastructure.email
-}?subject=${encodeURIComponent(
-  'AI infrastructure — planned build review'
-)}&body=${encodeURIComponent(
-  'Hello SonarWave,\n\nWe have an AI infrastructure decision coming up.\n\nA short description of the project:\nWhat we need to decide:\nOur decision deadline, if known:\n\nPlease suggest a time for a 20-minute fit call.\n\nThanks!'
-)}`;
-
-const trackContact = () =>
-  gtag.event({
-    action: 'contact_click',
-    category: 'engagement',
-    label: infrastructure.name,
-  });
 
 const Brand = () => (
   <a className="brand" href="#top" aria-label="SonarWave home">
@@ -35,19 +21,48 @@ const Brand = () => (
       <img src="/assets/images/logo.png" alt="" width="200" height="200" />
     </span>
     <span className="brand-type">
-      <span className="brand-name">SonarWave</span>
-      <span className="brand-sub">Technologies</span>
+      <span className="brand-name">{content.brand.name}</span>
+      <span className="brand-sub">{content.brand.suffix}</span>
     </span>
   </a>
 );
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inquiryId, setInquiryId] = useState(content.contact.defaultInquiry);
+  const inquiry = content.contact.inquiryOptions.find(
+    (option) => option.id === inquiryId
+  );
+  const contactHref = `mailto:${
+    infrastructure.email
+  }?subject=${encodeURIComponent(
+    `${content.contact.emailSubject}: ${inquiry?.label || ''}`
+  )}&body=${encodeURIComponent(
+    `${content.contact.emailGreeting}\n\nService: ${inquiry?.label || ''}\n\n${
+      inquiry?.prompt || ''
+    }\n\n${content.contact.emailClosing}`
+  )}`;
+
+  const selectInquiry = (id: string) => {
+    setInquiryId(id);
+    gtag.event({
+      action: 'service_selected',
+      category: 'engagement',
+      label: id,
+    });
+  };
+
+  const trackContact = () =>
+    gtag.event({
+      action: 'contact_click',
+      category: 'engagement',
+      label: inquiryId,
+    });
 
   return (
     <div className="sonar-site" id="top">
       <a className="skip-link" href="#main">
-        Skip to content
+        {content.navigation.skip}
       </a>
       <header className="site-header">
         <div className="container nav-inner">
@@ -71,20 +86,20 @@ const App = () => {
             }}
           >
             <a href="#infrastructure" onClick={() => setMenuOpen(false)}>
-              Infrastructure
+              {content.navigation.procurement}
             </a>
             <a href="#process" onClick={() => setMenuOpen(false)}>
-              Delivery
+              {content.navigation.inference}
             </a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
-              Experience
+            <a href="#training" onClick={() => setMenuOpen(false)}>
+              {content.navigation.training}
             </a>
             <a
               className="button button-small button-dark"
               href="#contact"
               onClick={() => setMenuOpen(false)}
             >
-              Let’s talk{' '}
+              {content.navigation.contact}{' '}
               <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
             </a>
           </nav>
@@ -94,87 +109,72 @@ const App = () => {
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span /> FOR ENGINEERING & IT TEAMS
+              <span />
+              {content.hero.eyebrow}
             </p>
             <h1 id="hero-title">
-              Know what to buy.
+              {content.hero.title}
               <br />
-              <em>Before you commit.</em>
+              <em>{content.hero.titleEmphasis}</em>
             </h1>
-            <p className="hero-description">
-              Plan an AI rollout with hardware that supports your software,
-              workloads and growth. Get a tested specification, comparable
-              vendor quotes and a clear buying recommendation.
-            </p>
+            <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
               <a className="button button-red" href="#contact">
-                Review your planned build{' '}
+                {content.hero.primaryAction}{' '}
                 <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
               </a>
               <a className="text-link" href="#infrastructure">
-                See what you receive <FiArrowDown aria-hidden="true" />
+                {content.hero.secondaryAction}
+                <FiArrowDown aria-hidden="true" />
               </a>
             </div>
-            <p className="hero-note">
-              Start with a defined plan. Continue through procurement and
-              deployment.
+            <p className="hero-note">{content.hero.note}</p>
+            <p className="partner-path">
+              {content.hero.partnerPrompt}{' '}
+              <a href="#sales-training">{content.hero.partnerAction}</a>
             </p>
           </div>
           <div
             className="delivery-map"
-            aria-label="Your infrastructure decision package"
+            aria-label="Our services and the outcomes they support"
           >
             <div className="delivery-map-heading">
               <ServerIcon aria-hidden="true" />
-              <span className="eyebrow">
-                YOUR INFRASTRUCTURE DECISION PACKAGE
-              </span>
+              <span className="eyebrow">{content.hero.outcomesHeading}</span>
             </div>
             <ol>
-              {[
-                [
-                  'What should we buy?',
-                  'Recommended specifications, alternatives and tradeoffs',
-                ],
-                [
-                  'Will it meet our workload?',
-                  'Benchmark evidence against performance and user targets',
-                ],
-                [
-                  'What will it cost?',
-                  'Purchase, operating and engineering costs over the system’s life',
-                ],
-                [
-                  'When can we get it running?',
-                  'Vendor allocation, delivery milestones and deployment planning',
-                ],
-              ].map(([title, detail], i) => (
+              {content.hero.outcomes.map(({ title, detail, href }, i) => (
                 <li key={title}>
                   <span className="delivery-index">0{i + 1}</span>
                   <div>
-                    <h2>{title}</h2>
+                    <h2>
+                      <a href={href}>{title}</a>
+                    </h2>
                     <p>{detail}</p>
                   </div>
                 </li>
               ))}
             </ol>
             <div className="delivery-map-footer">
-              <FiCheckCircle aria-hidden="true" /> A recommendation to proceed,
-              revise or rule out a configuration.
+              <FiCheckCircle aria-hidden="true" />
+              {content.hero.outcomesFooter}
             </div>
           </div>
         </section>
         <div className="trust-strip">
           <div className="container trust-inner">
-            <span className="eyebrow">PRIOR PROFESSIONAL EXPERIENCE</span>
+            <span className="eyebrow">{content.experienceStrip.eyebrow}</span>
             <span>
-              <FiCheck aria-hidden="true" /> Government & public-sector systems
+              <FiCheck aria-hidden="true" />
+              {content.experienceStrip.publicSector}
             </span>
             <span>
-              <FiCheck aria-hidden="true" /> Aerospace & technical programs
+              <FiCheck aria-hidden="true" />
+              {content.experienceStrip.aerospace}
             </span>
             <span>
-              <FiCheck aria-hidden="true" /> OEMs, resellers & custom builders
+              <FiCheck aria-hidden="true" />
+              {content.experienceStrip.vendors}
             </span>
           </div>
         </div>
@@ -182,103 +182,76 @@ const App = () => {
         <section className="section container risk-section" id="decisions">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">THE COST OF GETTING IT WRONG</p>
+              <p className="eyebrow">{content.businessCase.eyebrow}</p>
               <h2>
-                Infrastructure decisions
+                {content.businessCase.title}
                 <br />
-                become product constraints.
+                {content.businessCase.titleSecondLine}
               </h2>
             </div>
-            <p>
-              An unsuitable purchase can cost more than replacement hardware. It
-              can delay features, limit the users you can serve and leave
-              developers building workarounds.
-            </p>
+            <p>{content.businessCase.description}</p>
           </div>
           <div className="risk-grid">
             <article>
-              <span className="eyebrow">CAPABILITY</span>
-              <h3>Hardware that limits your software.</h3>
-              <p>
-                Powerful hardware can still be the wrong fit for the AI training
-                or inference software your team needs. A mismatch can restrict
-                usable tools, block features and force changes to the software
-                stack.
-              </p>
-              <strong>
-                Protect your software options before committing to hardware.
-              </strong>
+              <span className="eyebrow">
+                {content.businessCase.investment.eyebrow}
+              </span>
+              <h3>{content.businessCase.investment.title}</h3>
+              <p>{content.businessCase.investment.description}</p>
+              <strong>{content.businessCase.investment.outcome}</strong>
             </article>
             <article>
-              <span className="eyebrow">PERFORMANCE</span>
-              <h3>Capacity you can’t reach.</h3>
-              <p>
-                The GPU is one part of the system. Serving software, CPU,
-                memory, storage and networking must work together to meet your
-                response-time and concurrent-user targets.
-              </p>
-              <strong>
-                Benchmark the full system against realistic demand.
-              </strong>
+              <span className="eyebrow">
+                {content.businessCase.focus.eyebrow}
+              </span>
+              <h3>{content.businessCase.focus.title}</h3>
+              <p>{content.businessCase.focus.description}</p>
+              <strong>{content.businessCase.focus.outcome}</strong>
             </article>
             <article>
-              <span className="eyebrow">REWORK</span>
-              <h3>Engineering time lost to workarounds.</h3>
-              <p>
-                Incompatible hardware can pull developers into low-level
-                programming and debugging just to make their AI software run.
-                Repeated workarounds consume engineering time and compute budget
-                while product development and scaling wait.
-              </p>
-              <strong>
-                Buy for the full cost of ownership, including engineering
-                effort.
-              </strong>
+              <span className="eyebrow">
+                {content.businessCase.continuity.eyebrow}
+              </span>
+              <h3>{content.businessCase.continuity.title}</h3>
+              <p>{content.businessCase.continuity.description}</p>
+              <strong>{content.businessCase.continuity.outcome}</strong>
             </article>
           </div>
-          <p className="risk-takeaway">
-            Keep your engineers focused on building and scaling, with hardware
-            decisions grounded in the software they need to use.
-          </p>
+          <p className="risk-takeaway">{content.businessCase.takeaway}</p>
         </section>
 
         <section className="pilot-section" id="infrastructure">
           <div className="container pilot-layout">
             <div className="pilot-copy">
-              <p className="eyebrow">01 / YOUR FIRST ENGAGEMENT</p>
+              <p className="eyebrow">{content.services.procurement.eyebrow}</p>
               <h2>
-                One workload.
+                {content.services.procurement.title}
                 <br />
-                One clear
-                <br />
-                <em>buying decision.</em>
+                <em>{content.services.procurement.titleEmphasis}</em>
               </h2>
-              <p>
-                Give your engineering, IT and procurement teams a common basis
-                for the decision. We bring the requirements, benchmark evidence
-                and vendor options into one plan they can review and approve.
-              </p>
+              <p>{content.services.procurement.description}</p>
               <div className="pilot-principle">
                 <FiCheckCircle aria-hidden="true" />
                 <div>
-                  <strong>We do the technical coordination.</strong>
-                  <p>
-                    Bring the workload, constraints and any existing quotes. We
-                    work with your technical contacts and vendors to develop the
-                    specification, compare options and document the gaps.
-                  </p>
+                  <strong>
+                    {content.services.procurement.principle.title}
+                  </strong>
+                  <p>{content.services.procurement.principle.description}</p>
                 </div>
               </div>
             </div>
             <article className="offer-card infrastructure-offer">
               <div className="offer-topline">
-                <span className="eyebrow">START WITH ONE WORKLOAD</span>
-                <span className="scope-badge">AGREED SCOPE</span>
+                <span className="eyebrow">
+                  {content.services.procurement.audience}
+                </span>
+                <span className="scope-badge">
+                  {content.services.procurement.scopeBadge}
+                </span>
               </div>
               <h3>{infrastructure.entryName}</h3>
               <p className="assessment-intro">
-                A decision package that explains what to buy, what to change,
-                and what to validate before you place an order.
+                {content.services.procurement.offerDescription}
               </p>
               <ul className="deliverables">
                 {infrastructure.deliverables.map((item) => (
@@ -289,17 +262,18 @@ const App = () => {
                 ))}
               </ul>
               <p className="assessment-price">
-                Agreed scope. Fixed fee. No deployment commitment.
+                {content.services.procurement.engagement}
               </p>
-              <a className="button button-red" href="#contact">
-                Discuss your infrastructure plan{' '}
+              <a
+                className="button button-red"
+                href="#contact"
+                onClick={() => selectInquiry('procurement')}
+              >
+                {content.services.procurement.action}{' '}
                 <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
               </a>
               <p className="offer-footnote">
-                Test environments, configurations, quote availability and
-                schedule are agreed in the proposal. Hardware, software and
-                cloud usage are separate. Implementation is a separately scoped
-                phase.
+                {content.services.procurement.nextSteps}
               </p>
             </article>
           </div>
@@ -307,18 +281,14 @@ const App = () => {
         <section className="section container" id="process">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">02 / THE FULL PATH TO DELIVERY</p>
+              <p className="eyebrow">{content.services.inference.eyebrow}</p>
               <h2>
-                From requirements
+                {content.services.inference.title}
                 <br />
-                to production operations.
+                {content.services.inference.titleSecondLine}
               </h2>
             </div>
-            <p>
-              When you are ready to proceed, we can coordinate the build, deploy
-              the environment and verify it against your requirements.
-              Implementation and ongoing support are scoped as separate phases.
-            </p>
+            <p>{content.services.inference.description}</p>
           </div>
           <div className="process-grid infrastructure-process">
             {infrastructure.stages.map((stage, i) => (
@@ -330,122 +300,156 @@ const App = () => {
               </article>
             ))}
           </div>
+          <p className="risk-takeaway">
+            {content.services.inference.successMeasures}
+          </p>
+          <div className="service-action">
+            <a
+              className="button button-red"
+              href="#contact"
+              onClick={() => selectInquiry('inference')}
+            >
+              {content.services.inference.action}{' '}
+              <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
+            </a>
+          </div>
           <div className="delivery-capabilities">
             <article>
-              <p className="eyebrow">HARDWARE SOURCING & BUILD COORDINATION</p>
-              <h3>
-                Hardware chosen for
-                <br />
-                the software you need.
-              </h3>
-              <p>
-                We bring AI software engineering knowledge into hardware
-                procurement, connecting your training, inference and deployment
-                needs to the buying decision. We work across OEMs, resellers and
-                custom builders to help secure hardware allocation and
-                coordinate delivery with your project schedule.
+              <p className="eyebrow">
+                {content.services.inference.models.eyebrow}
               </p>
+              <h3>
+                {content.services.inference.models.title}
+                <br />
+                {content.services.inference.models.titleSecondLine}
+              </h3>
+              <p>{content.services.inference.models.description}</p>
               <ul>
-                <li>CPU, GPU, memory, storage and network configuration</li>
-                <li>
-                  AI software compatibility, expansion and support options
-                </li>
-                <li>Vendor allocation, lead times and delivery milestones</li>
+                {content.services.inference.models.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
               </ul>
             </article>
             <article>
-              <p className="eyebrow">PRODUCTION OPERATING REQUIREMENTS</p>
-              <h3>
-                Plan for the environment
-                <br />
-                the system has to run in.
-              </h3>
-              <p>
-                Operating controls belong in the architecture and acceptance
-                plan. Define how environments are separated, software is
-                checked, and AI activity is recorded before the rollout.
+              <p className="eyebrow">
+                {content.services.inference.continuity.eyebrow}
               </p>
+              <h3>
+                {content.services.inference.continuity.title}
+                <br />
+                {content.services.inference.continuity.titleSecondLine}
+              </h3>
+              <p>{content.services.inference.continuity.description}</p>
               <ul>
-                <li>Network isolation and environment separation</li>
-                <li>
-                  Package vulnerability scanning, including daily checks where
-                  required
-                </li>
-                <li>AI audit trails, logging and performance monitoring</li>
+                {content.services.inference.continuity.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
               </ul>
             </article>
           </div>
         </section>
 
+        <section className="section container" id="training">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">{content.services.training.eyebrow}</p>
+              <h2>
+                {content.services.training.title}
+                <br />
+                {content.services.training.titleSecondLine}
+              </h2>
+            </div>
+            <p>{content.services.training.description}</p>
+          </div>
+          <div className="delivery-capabilities">
+            <article>
+              <p className="eyebrow">
+                {content.services.training.technical.audience}
+              </p>
+              <h3>{content.services.training.technical.title}</h3>
+              <p>{content.services.training.technical.description}</p>
+              <ul>
+                {content.services.training.technical.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <a
+                className="text-link service-action"
+                href="#contact"
+                onClick={() => selectInquiry('technical-training')}
+              >
+                {content.services.training.technical.action}{' '}
+                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
+              </a>
+            </article>
+            <article id="sales-training">
+              <p className="eyebrow">
+                {content.services.training.sales.audience}
+              </p>
+              <h3>{content.services.training.sales.title}</h3>
+              <p>{content.services.training.sales.description}</p>
+              <ul>
+                {content.services.training.sales.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <a
+                className="text-link service-action"
+                href="#contact"
+                onClick={() => selectInquiry('sales-training')}
+              >
+                {content.services.training.sales.action}{' '}
+                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
+              </a>
+            </article>
+          </div>
+          <p className="risk-takeaway">{content.services.training.takeaway}</p>
+        </section>
+
         <section className="about-section" id="about">
           <div className="container about-layout">
             <div>
-              <p className="eyebrow">03 / EXPERIENCE & DELIVERY</p>
+              <p className="eyebrow">{content.experience.eyebrow}</p>
               <h2>
-                Technical depth.
+                {content.experience.title}
                 <br />
-                Accountable delivery.
+                {content.experience.titleSecondLine}
               </h2>
-              <p>
-                SonarWave Technologies Inc. brings together infrastructure
-                engineering, hardware procurement and application delivery. We
-                turn requirements into a defined scope, measurable acceptance
-                criteria and a practical path to production.
-              </p>
-              <p>
-                Engagements are organized around deliverables: validated
-                specifications, vendor comparisons, tested deployments and
-                documented handover. Responsibilities, milestones and changes
-                are agreed as part of the project.
-              </p>
+              <p>{content.experience.description}</p>
+              <p>{content.experience.delivery}</p>
               <div className="performance-experience">
-                <p className="eyebrow">AI INFERENCE PERFORMANCE</p>
-                <h3>Get more from the infrastructure you have.</h3>
+                <p className="eyebrow">
+                  {content.experience.performance.eyebrow}
+                </p>
+                <h3>{content.experience.performance.title}</h3>
                 <p className="performance-result">
-                  <strong>200×</strong>
-                  <span>the throughput of the previous setup</span>
+                  <strong>{content.experience.performance.result}</strong>
+                  <span>{content.experience.performance.comparison}</span>
                 </p>
-                <p>
-                  In one implementation, inference optimization achieved 200×
-                  the throughput of the previous setup. We use measured
-                  performance to guide decisions about optimization and
-                  additional capacity.
-                </p>
+                <p>{content.experience.performance.description}</p>
                 <span className="experience-note">
-                  Result from one implementation. Performance varies with
-                  workload, hardware and configuration.
+                  {content.experience.performance.context}
                 </span>
               </div>
             </div>
             <div className="experience-cards">
               <article>
-                <span className="eyebrow">MISSION-CRITICAL ENVIRONMENTS</span>
-                <h3>Leadership in procurement and AI engineering.</h3>
-                <p>
-                  Our experience includes leading major hardware procurements
-                  and AI engineering projects in government and aerospace,
-                  drafting technical requirements and procurement proposals, and
-                  coordinating with resellers on government procurement lists.
-                </p>
+                <span className="eyebrow">
+                  {content.experience.procurement.eyebrow}
+                </span>
+                <h3>{content.experience.procurement.title}</h3>
+                <p>{content.experience.procurement.description}</p>
                 <span className="experience-note">
-                  Sector experience includes work undertaken in prior
-                  professional roles.
+                  {content.experience.procurement.context}
                 </span>
               </article>
               <article>
-                <span className="eyebrow">AEROSPACE AI INFRASTRUCTURE</span>
-                <h3>Trusted with AI infrastructure decisions.</h3>
-                <p>
-                  In prior professional roles, our leadership was entrusted by
-                  major aerospace organizations to assess, benchmark and procure
-                  AI infrastructure.
-                </p>
-                <p>
-                  This experience includes working alongside government
-                  data-centre professionals to translate AI software and
-                  workload needs into hardware specifications and infrastructure
-                  requirements.
-                </p>
+                <span className="eyebrow">
+                  {content.experience.aerospace.eyebrow}
+                </span>
+                <h3>{content.experience.aerospace.title}</h3>
+                <p>{content.experience.aerospace.description}</p>
+                <p>{content.experience.aerospace.context}</p>
               </article>
             </div>
           </div>
@@ -453,21 +457,21 @@ const App = () => {
 
         <section className="section container faq-layout" id="faq">
           <div>
-            <p className="eyebrow">THE PRACTICAL DETAILS</p>
+            <p className="eyebrow">{content.faq.eyebrow}</p>
             <h2>
-              Before we
+              {content.faq.title}
               <br />
-              get started.
+              {content.faq.titleSecondLine}
             </h2>
             <p>
-              Have a different question?
+              {content.faq.contactPrompt}
               <br />
               <a
                 className="text-link"
                 href={`mailto:${infrastructure.email}`}
                 onClick={trackContact}
               >
-                Contact SonarWave{' '}
+                {content.faq.contactAction}{' '}
                 <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
               </a>
             </p>
@@ -488,59 +492,60 @@ const App = () => {
         <section className="contact-section" id="contact">
           <div className="container contact-layout">
             <div>
-              <p className="eyebrow">START WITH THE DECISION AHEAD</p>
+              <p className="eyebrow">{content.contact.eyebrow}</p>
               <h2>
-                Have a planned
+                {content.contact.title}
                 <br />
-                AI build
-                <br />
-                <em>or vendor quote?</em>
+                <em>{content.contact.titleEmphasis}</em>
               </h2>
-              <p>
-                Start with a short description of the project, the decision you
-                need to make and your deadline. You do not need a finished
-                specification to get in touch.
-              </p>
+              <p>{content.contact.description}</p>
             </div>
             <div className="contact-card">
-              <span className="eyebrow">YOUR FIRST STEP</span>
+              <span className="eyebrow">{content.contact.call.eyebrow}</span>
               <h3>
-                A 20-minute fit call.
-                <br />A defined next step.
+                {content.contact.call.title}
+                <br />
+                {content.contact.call.titleSecondLine}
               </h3>
               <ul>
-                <li>
-                  <FiCheck aria-hidden="true" /> Identify the buying or
-                  deployment decision
-                </li>
-                <li>
-                  <FiCheck aria-hidden="true" /> Establish the workload and key
-                  constraints
-                </li>
-                <li>
-                  <FiCheck aria-hidden="true" /> Confirm fit and scope the first
-                  paid engagement
-                </li>
+                {content.contact.call.points.map((point) => (
+                  <li key={point}>
+                    <FiCheck aria-hidden="true" />
+                    {point}
+                  </li>
+                ))}
               </ul>
+              <label className="inquiry-label" htmlFor="inquiry-service">
+                {content.contact.inquiryLabel}
+              </label>
+              <select
+                className="inquiry-select"
+                id="inquiry-service"
+                value={inquiryId}
+                onChange={(event) => selectInquiry(event.target.value)}
+              >
+                {content.contact.inquiryOptions.map((option) => (
+                  <option key={option.id} value={option.id}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
               <a
                 className="button button-red"
                 href={contactHref}
                 onClick={trackContact}
               >
-                Request a fit call{' '}
+                {content.contact.call.action}{' '}
                 <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
               </a>
-              <p className="contact-note">
-                Opens an email to SonarWave with three short prompts. Scope, fee
-                and schedule are agreed before paid work begins.
-              </p>
+              <p className="contact-note">{content.contact.call.note}</p>
               <div className="contact-direct">
                 <a
                   className="contact-email"
                   href={infrastructure.phoneHref}
                   onClick={trackContact}
                 >
-                  Call {infrastructure.phone}
+                  {content.contact.phoneAction} {infrastructure.phone}
                 </a>
                 <a
                   className="contact-email"
@@ -556,9 +561,11 @@ const App = () => {
       </main>
       <footer className="container site-footer">
         <Brand />
-        <p>© {new Date().getFullYear()} SonarWave Technologies Inc.</p>
+        <p>
+          © {new Date().getFullYear()} {content.brand.legalName}
+        </p>
         <a href="#top">
-          Back to top{' '}
+          {content.navigation.backToTop}{' '}
           <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
         </a>
       </footer>
