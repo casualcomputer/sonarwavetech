@@ -954,7 +954,7 @@ h2 {
     width: calc(100% - 40px);
   }
   .nav-inner {
-    height: 72px;
+    height: 64px;
   }
   .brand-name {
     font-size: 23px;
@@ -974,7 +974,7 @@ h2 {
   .nav-links {
     display: none;
     position: absolute;
-    top: 71px;
+    top: 100%;
     left: 0;
     right: 0;
     padding: 20px;
@@ -996,20 +996,21 @@ h2 {
     margin-top: 10px;
   }
   .hero {
-    padding-block: 52px;
+    padding-block: 36px 48px;
     grid-template-columns: 1fr;
     gap: 35px;
   }
   .hero h1 {
-    font-size: 58px;
-    letter-spacing: -2.7px;
+    font-size: clamp(34px, 9vw, 48px);
+    letter-spacing: -0.04em;
+    line-height: 1.12;
   }
   .hero-copy {
     max-width: 560px;
   }
   .hero-copy > .eyebrow {
-    font-size: 9px;
-    margin-bottom: 24px;
+    font-size: 10px;
+    margin-bottom: 18px;
   }
   .hero-description {
     font-size: 16px;
@@ -1123,13 +1124,6 @@ h2 {
   }
 }
 @media (max-width: 420px) {
-  .hero h1 {
-    font-size: 49px;
-    letter-spacing: -2.4px;
-  }
-  .hero-description {
-    font-size: 15px;
-  }
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
@@ -1138,9 +1132,6 @@ h2 {
   .hero-actions > .button {
     width: 100%;
     justify-content: space-between;
-  }
-  .hero-note {
-    font-size: 10px;
   }
   .workflow-demo {
     padding: 15px;
@@ -1261,10 +1252,6 @@ h2 {
   height: 22px;
 }
 @media (max-width: 360px) {
-  .hero h1 {
-    font-size: 42px;
-    letter-spacing: -2px;
-  }
   .contact-layout h2 {
     font-size: 34px;
     letter-spacing: -1.5px;
@@ -1510,12 +1497,139 @@ h2 {
   #contact h2 {
     font-size: 30px;
   }
-  .hero-copy > .eyebrow {
-    font-size: 8px;
-  }
 }
 @media (max-width: 520px) {
   .faq-list details > p {
     padding-right: 0;
+  }
+}
+
+/* One mobile type scale keeps the buying path readable at every phone width. */
+@media (max-width: 800px) {
+  :root {
+    scroll-padding-top: 84px;
+  }
+  .hero h1 em,
+  h2 em {
+    letter-spacing: -0.035em;
+  }
+  .hero-copy > .eyebrow > span {
+    flex-shrink: 0;
+  }
+  .hero-description {
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .button,
+  .hero-actions .text-link,
+  .infrastructure-offer > .button,
+  .contact-card > .button {
+    font-size: 14px;
+  }
+  .text-link,
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .hero-note,
+  .partner-path,
+  .offer-footnote,
+  .delivery-map-footer,
+  .contact-layout .contact-card > .contact-note,
+  .site-footer p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .hero-note {
+    margin-top: 12px;
+  }
+  .partner-path {
+    margin-top: 12px;
+  }
+  h2,
+  .pilot-copy h2,
+  #about h2,
+  #contact h2 {
+    font-size: clamp(28px, 7.5vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
+  .eyebrow,
+  .delivery-map-heading .eyebrow,
+  .offer-topline .eyebrow,
+  .risk-grid .eyebrow,
+  .delivery-capabilities .eyebrow,
+  .contact-card > .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .scope-badge {
+    font-size: 11px;
+    white-space: normal;
+  }
+  .offer-topline {
+    flex-wrap: wrap;
+  }
+  .section-heading > p,
+  .pilot-copy > p:not(.eyebrow),
+  .about-layout > div > p:not(.eyebrow),
+  .contact-layout > div > p:not(.eyebrow),
+  .faq-list details > p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .delivery-map li p,
+  .risk-grid p,
+  .risk-grid strong,
+  .risk-takeaway,
+  .assessment-intro,
+  .assessment-price,
+  .pilot-principle strong,
+  .pilot-principle p,
+  .deliverables li,
+  .process-grid p,
+  .step-detail,
+  .delivery-capabilities p:not(.eyebrow),
+  .delivery-capabilities ul,
+  .contact-card li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .process-grid h3,
+  .risk-grid h3 {
+    font-size: 22px;
+  }
+  .inquiry-label {
+    font-size: 14px;
+  }
+  .inquiry-select {
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+@media (max-width: 520px) {
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-actions > .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hero-actions .text-link {
+    align-self: flex-start;
+  }
+  .section,
+  .pilot-section,
+  .about-section,
+  .contact-section,
+  .risk-section {
+    padding-block: 48px;
   }
 }
