@@ -10,8 +10,8 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 - Clear sans-serif display type, comfortable 16–18px body copy, 13–14px supporting text. Mobile heading sizes stay proportional to the viewport.
 - A real subject in the hero: GPU server and workstation, shown as a clearly labelled conceptual illustration.
 - Open layouts and dividers establish hierarchy. Reserve a paper treatment for the example deliverable and a contained surface for the inquiry form.
-- Repeated primary CTA: Discuss your AI project. Secondary action: inspect the illustrative review.
-- Useful interactions: keyboard-accessible review tabs, FAQ disclosure, project-stage selection, editable inquiry and clipboard fallback. Motion is short and supports state; reduced-motion settings disable it.
+- Repeated primary CTA: Discuss your AI project. Secondary action: read the inline buying example.
+- Useful interactions: keyboard-reachable section links, FAQ disclosure, project-stage selection, editable inquiry with draft retention and clipboard fallback. Motion is short and supports state; reduced-motion settings disable it.
 
 ## Composition
 
@@ -20,14 +20,14 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 3. Three concise delivery commitments without unsupported client logos or metrics.
 4. Pain → solution rows connecting product delivery risk, performance on target GPUs and evolving AI needs to outcomes.
 5. Founder experience with explicit relevance to buying and deployment decisions.
-6. Dark purchase-review section with scope and a paper-like, interactive example report.
+6. Dark purchase-review section with scope and a paper-like, static buying-decision summary.
 7. Three service stages: advise and coordinate, deploy and optimize, support and evolve.
 8. FAQ and final project inquiry.
 9. Legal name, consistent contact details and useful footer links.
 
 ## Implementation choices
 
-Use Radix Tabs for keyboard navigation and selection semantics, with a small source-owned component wrapper and local design tokens. Use Lucide icons consistently. Keep the existing framework and avoid a Tailwind migration solely for cosmetic changes. Use CSS for short transitions; no additional motion engine is required.
+Use native links for the inline example and the detailed walkthrough. Show essential reasoning directly, with no tabs or disclosure gates. The detailed page leads with the conditional decision; download and print appear after the content. Use Lucide icons consistently. Keep the existing framework and avoid a Tailwind migration solely for cosmetic changes. Use CSS for short transitions; no additional motion engine is required.
 
 ## Evidence and assets
 

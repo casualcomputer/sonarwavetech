@@ -18,7 +18,8 @@
     "process": "Deployment & support",
     "faq": "Questions",
     "contact": "Discuss your AI project",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "example": "Buying example"
   },
   "hero": {
     "eyebrow": "GPU PURCHASE ADVICE & PRODUCTION AI",
@@ -26,7 +27,7 @@
     "titleEmphasis": "Put AI to work.",
     "description": "We align GPU servers and workstations with your product vision, the models you need and your developers’ expertise. Test before you buy, then deploy and improve the system as your business grows.",
     "action": "Discuss your AI project",
-    "secondaryAction": "See an example review",
+    "secondaryAction": "See how we evaluate a GPU purchase",
     "note": "Founder experience in aerospace data-center procurement and government AI procurement.",
     "visual": {
       "eyebrow": "HARDWARE + SOFTWARE + PEOPLE",
@@ -76,69 +77,7 @@
     ],
     "outcome": "Your deliverable: a written recommendation with the reasons behind it.",
     "scope": "Scope, fee and delivery schedule are agreed before work starts. Benchmarking is scoped and budgeted separately; hardware, software and deployment costs are separate.",
-    "sampleAction": "See an example review",
-    "preview": [
-      {
-        "id": "workload",
-        "label": "Workload",
-        "title": "Will it run what you need?",
-        "rows": [
-          {
-            "label": "Product",
-            "value": "Features, models and user demand you need to support"
-          },
-          {
-            "label": "Team",
-            "value": "Your developers’ tools, expertise and software requirements"
-          },
-          {
-            "label": "Fit",
-            "value": "Model, software and hardware compatibility—not memory alone"
-          }
-        ],
-        "outcome": "A system plan aligned with your product vision"
-      },
-      {
-        "id": "quote",
-        "label": "Quote",
-        "title": "What is missing from the quote?",
-        "rows": [
-          {
-            "label": "Hardware",
-            "value": "GPU, memory, storage and networking fit"
-          },
-          {
-            "label": "Readiness",
-            "value": "Power, cooling and installation requirements"
-          },
-          {
-            "label": "Ownership",
-            "value": "Warranty, support and purchasing responsibilities"
-          }
-        ],
-        "outcome": "A written record of gaps, risks and tradeoffs"
-      },
-      {
-        "id": "decision",
-        "label": "Next steps",
-        "title": "A recommendation you can act on.",
-        "rows": [
-          {
-            "label": "Recommend",
-            "value": "The proposed direction and reasons behind it"
-          },
-          {
-            "label": "Validate",
-            "value": "Workload tests on target GPUs and remaining system checks"
-          },
-          {
-            "label": "Plan",
-            "value": "Setup, acceptance tests and handover scope"
-          }
-        ],
-        "outcome": "A clear decision record for your leadership team"
-      }
-    ]
+    "sampleAction": "See the decision walkthrough"
   },
   "delivery": {
     "eyebrow": "ONE CONNECTED PATH",
@@ -234,37 +173,59 @@
   },
   "footer": {
     "phoneAction": "Call",
-    "sampleAction": "Example review",
+    "sampleAction": "See the buying example",
     "statement": ["Better decisions.", "AI your team can put to work."]
   },
   "sample": {
-    "eyebrow": "ILLUSTRATIVE DELIVERABLE",
-    "title": "What a GPU Purchase Review covers.",
-    "description": "This is an example of the review format, not a client report or a hardware recommendation. Your review is based on your workloads, quotes and agreed scope.",
-    "scenario": "Example brief: a team wants a local AI assistant for internal documents and is comparing GPU server quotes.",
+    "eyebrow": "ILLUSTRATIVE BUYING DECISION",
+    "title": "Enough GPU memory. Ready to buy?",
+    "description": "How a promising quote becomes a decision your team can act on.",
+    "disclaimer": "Illustrative scenario, not a client case or measured benchmark.",
+    "preview": {
+      "title": "Enough memory. Unproven fit.",
+      "scenario": "A team is choosing GPUs for an internal document assistant. The quote meets its estimated memory needs.",
+      "riskLabel": "The gap",
+      "risk": "The quote does not establish whether the chosen model and serving software work on those GPUs.",
+      "decisionLabel": "Our recommendation in this example",
+      "decision": "Validate before ordering.",
+      "nextStep": "Check software support and test a representative workload on the target GPUs."
+    },
     "sections": [
       {
-        "title": "1. Requirements",
-        "description": "Record the product vision, required features, models, developer expertise and existing software. Connect these to user demand, response-time needs, data restrictions and budget."
+        "title": "The product the team wants to build",
+        "description": "An internal assistant that answers questions from company documents. It needs to work with the team’s existing application and respond reliably as more staff use it."
       },
       {
-        "title": "2. Quote assessment",
-        "description": "Assess whether the proposed hardware supports the required models and software, beyond GPU memory alone. Check facilities, networking, storage, warranty and vendor assumptions."
+        "title": "The risk the specification sheet leaves open",
+        "description": "The GPUs meet the estimated memory requirement, but compatibility with the chosen model and serving software is unconfirmed. If that combination is unsupported, developers may have to change the model or rework the application after purchase."
       },
       {
-        "title": "3. Installation readiness",
-        "description": "Check power, cooling, rack or workstation space, network access and who owns installation and system access."
-      },
-      {
-        "title": "4. Tests on target GPUs, if scoped",
-        "description": "Test agreed workloads on the GPUs being considered. Report compatibility findings, response times, request capacity and running costs, with the test conditions and any limits on applying the results to the complete system."
-      },
-      {
-        "title": "5. Recommendation & validation",
-        "description": "Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing."
+        "title": "The evidence we would gather",
+        "description": "Check model and software support, then run representative document tasks on the target GPUs at the expected user demand. Measure response times and request capacity, and record any changes the developers would need to make."
       }
     ],
-    "closing": "The outcome is a decision record: how the system supports your product vision, what the evidence shows and what still needs to be checked before you commit."
+    "decision": {
+      "eyebrow": "THE BUYING DECISION",
+      "title": "Validate before ordering.",
+      "description": "Memory capacity is one requirement. In this example, the recommendation remains conditional until compatibility and workload tests support the purchase.",
+      "conditions": [
+        {
+          "title": "Proceed",
+          "description": "If the model and software are supported and workload tests meet the agreed requirements."
+        },
+        {
+          "title": "Change the plan",
+          "description": "If meeting those requirements needs different hardware, software or unacceptable developer rework."
+        },
+        {
+          "title": "Hold the order",
+          "description": "If critical compatibility or performance questions remain unanswered."
+        }
+      ]
+    },
+    "closing": "The value: surface a delivery risk while the purchase can still change, and give leadership a clear basis for the decision.",
+    "downloadAction": "Download this example",
+    "printAction": "Print"
   },
   "commitments": [
     "Product vision before hardware specifications",

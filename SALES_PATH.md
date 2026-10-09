@@ -10,10 +10,12 @@
 
 1. Recognize the buying situation and the named entry offer in the hero.
 2. See each concern paired with how SonarWave helps and what the buyer receives.
-3. Inspect the review deliverables using the Workload, Quote and Next steps tabs, or open the downloadable, printable illustrative example.
+3. Read the inline buying example without leaving the homepage. Optionally open the short decision walkthrough to see the product goal, compatibility risk, required evidence and conditions to proceed, change or hold.
 4. Understand purchase advice, optional vendor coordination, deployment and ongoing software improvement.
 5. Resolve scope, existing-hardware and data-handling questions.
 6. Choose a project stage, optionally describe the goal, and prepare an email requesting a 20-minute call. Phone is also available.
+
+The hero and navigation link directly to the inline example. The detailed walkthrough has a Back link to the same location and a direct path to the inquiry. Download and print remain secondary utilities below the explanation. Inquiry drafts stay in the current tab when navigating between pages.
 
 A mobile action appears after the hero has passed and disappears when the contact section is visible. Major sections repeat the same call request. The contact draft includes the selected stage and the buyer’s optional project description, with workload, quote and timeline prompts when the description is empty. A copy action and manual-copy fallback support visitors without a configured email app.
 

@@ -1,25 +1,30 @@
 SONARWAVE TECHNOLOGIES
-ILLUSTRATIVE GPU PURCHASE REVIEW
+ILLUSTRATIVE BUYING DECISION
 
-This is an example of the review format, not a client report or a hardware recommendation. Your review is based on your workloads, quotes and agreed scope.
+Enough GPU memory. Ready to buy?
 
-Example brief: a team wants a local AI assistant for internal documents and is comparing GPU server quotes.
+Illustrative scenario, not a client case or measured benchmark.
 
-1. Requirements
-Record the product vision, required features, models, developer expertise and existing software. Connect these to user demand, response-time needs, data restrictions and budget.
+A team is choosing GPUs for an internal document assistant. The quote meets its estimated memory needs.
 
-2. Quote assessment
-Assess whether the proposed hardware supports the required models and software, beyond GPU memory alone. Check facilities, networking, storage, warranty and vendor assumptions.
+The product the team wants to build
+An internal assistant that answers questions from company documents. It needs to work with the team’s existing application and respond reliably as more staff use it.
 
-3. Installation readiness
-Check power, cooling, rack or workstation space, network access and who owns installation and system access.
+The risk the specification sheet leaves open
+The GPUs meet the estimated memory requirement, but compatibility with the chosen model and serving software is unconfirmed. If that combination is unsupported, developers may have to change the model or rework the application after purchase.
 
-4. Tests on target GPUs, if scoped
-Test agreed workloads on the GPUs being considered. Report compatibility findings, response times, request capacity and running costs, with the test conditions and any limits on applying the results to the complete system.
+The evidence we would gather
+Check model and software support, then run representative document tasks on the target GPUs at the expected user demand. Measure response times and request capacity, and record any changes the developers would need to make.
 
-5. Recommendation & validation
-Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing.
+Validate before ordering.
+Memory capacity is one requirement. In this example, the recommendation remains conditional until compatibility and workload tests support the purchase.
 
-The outcome is a decision record: how the system supports your product vision, what the evidence shows and what still needs to be checked before you commit.
+Proceed: If the model and software are supported and workload tests meet the agreed requirements.
+
+Change the plan: If meeting those requirements needs different hardware, software or unacceptable developer rework.
+
+Hold the order: If critical compatibility or performance questions remain unanswered.
+
+The value: surface a delivery risk while the purchase can still change, and give leadership a clear basis for the decision.
 
 Contact: info@sonarwave.org | +1 (647) 667-3518

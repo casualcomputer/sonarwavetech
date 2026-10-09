@@ -32,7 +32,7 @@ The selected homepage does not launch every proposed page in the brief. Industry
 
 ## October 9 design implementation
 
-The redesigned alternative adds a locally hosted DM Sans type system, proportional mobile headings, a conceptual GPU server/workstation hero image, an interactive sample review and a project-stage inquiry composer. Radix provides keyboard-accessible tabs; Lucide provides consistent icons. The paper, navy and red brand palette remains. Motion respects reduced-motion preferences. The example has download and print actions.
+The redesigned alternative adds a locally hosted DM Sans type system, proportional mobile headings, a conceptual GPU server/workstation hero image, an illustrative buying-decision example and a project-stage inquiry composer. The buying example is now readable without tabs; Lucide provides consistent icons. The paper, navy and red brand palette remains. Motion respects reduced-motion preferences. The example has download and print actions.
 
 The provided LinkedIn feed URL does not identify a founder, so no name or profile link has been added. A subsequent positioning update now includes the founder’s supplied experience, clearly attributed personally. Trust currently comes from explicit scope, visible deliverables, accurate action labels and contact details. Real client proof remains a future content input. See `design-qa.md` for verification.
 
@@ -43,3 +43,7 @@ Purchase advice is now explicit, with optional coordination across vendors and r
 ## Product-vision revision
 
 The copy now explains the business consequence of hardware/software mismatch: avoidable engineering work and roadmap delays. It distinguishes GPU memory from model/software compatibility and makes benchmarks on specific target GPUs visible in the purchase review and example. Ongoing optimization is framed around freeing the client’s team to focus on its domain, workflows and ROI. The separate prior-work disclaimer was removed at the user’s request; founder attribution remains in the experience statements. Provider names and proprietary methods remain private.
+
+## Simplified example journey
+
+The former outline is replaced by one labelled illustrative decision: a quote meets an estimated memory requirement, but model/software compatibility is unconfirmed. The example shows why to validate before ordering, what evidence to gather and when to proceed, change the plan or hold. No measured outcomes are invented. The homepage shows the summary inline; the detailed walkthrough is optional. Download/print follow the explanation. Inquiry drafts persist in the current tab across navigation, with graceful handling when browser storage is unavailable.

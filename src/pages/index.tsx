@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   X,
 } from 'lucide-react';
-import Link from 'next/link';
 
 import Brand from '../components/Brand';
 import ProjectInquiry from '../components/ProjectInquiry';
@@ -117,12 +116,9 @@ const App = () => {
             <a href="#process" onClick={() => setMenuOpen(false)}>
               {content.navigation.process}
             </a>
-            <Link
-              href="/sample-deliverable/"
-              onClick={() => setMenuOpen(false)}
-            >
-              Example review
-            </Link>
+            <a href="#example-review" onClick={() => setMenuOpen(false)}>
+              {content.navigation.example}
+            </a>
             <a
               className="button button-small button-dark"
               href="#contact"
@@ -149,10 +145,10 @@ const App = () => {
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
               <ReviewLink />
-              <Link className="text-link" href="/sample-deliverable/">
+              <a className="text-link" href="#example-review">
                 {content.hero.secondaryAction}
                 <ArrowRight aria-hidden="true" />
-              </Link>
+              </a>
             </div>
             <p className="hero-note">
               <span className="note-line" aria-hidden="true" />
@@ -393,10 +389,10 @@ const App = () => {
             <br />
             {content.footer.statement[1]}
           </p>
-          <Link className="text-link" href="/sample-deliverable/">
-            Explore the example review
+          <a className="text-link" href="#example-review">
+            {content.footer.sampleAction}
             <ArrowUpRight aria-hidden="true" />
-          </Link>
+          </a>
         </div>
         <div className="container footer-bottom">
           <p>
@@ -406,9 +402,9 @@ const App = () => {
         </div>
       </footer>
       {showMobileAction && !menuOpen && (
-        <div className="mobile-review-action">
+        <aside className="mobile-review-action" aria-label="Project inquiry">
           <ReviewLink />
-        </div>
+        </aside>
       )}
     </div>
   );

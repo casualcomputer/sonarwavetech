@@ -28,3 +28,7 @@ Do not name cloud providers used for inference testing in public copy. Keep prov
 ## Executive messaging
 
 Lead with product delivery: avoidable engineering work, roadmap delays and developer fit. Explain that GPU memory alone does not establish model/software compatibility. Emphasize workload tests on specific target GPUs before procurement and ongoing optimization that frees teams to focus on business workflows. Keep experience attributed naturally to “our founder”; the user requested removal of the separate prior-work disclaimer. The founder states they contributed to the first federal-government GenAI chatbot to reach production; do not add an unsupported country, date, project name, budget amount or performance figure.
+
+## Sales journey friction
+
+The user wants a smooth, low-effort UI. Show the illustrative buying decision inline on the homepage without tabs, gating or a mandatory page change. Keep the optional walkthrough short and focused on the risk, evidence and recommendation; never fabricate measured results. Preserve inquiry drafts across navigation within the current browser tab, and keep composing an inquiry functional when storage is blocked. Download and print are secondary utilities. The contact action still prepares an email rather than submitting a lead automatically.

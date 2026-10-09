@@ -10,15 +10,15 @@ This branch tests one buying journey: **GPU Purchase Review → deployment and o
 | Pain, consequence, solution and outcome    | `pains.items`           |
 | Founder experience and relevance to buyers | `experience`            |
 | Purchase review scope and deliverables     | `review`                |
-| Interactive review tabs                    | `review.preview`        |
+| Inline decision example                    | `sample.preview`        |
 | Setup and handover stages                  | `delivery`              |
 | Objections                                 | `faq.items`             |
 | Call request, email draft and phone        | `contact`               |
 | Inquiry stage choices                      | `contact.projectStages` |
-| Illustrative review format                 | `sample`                |
+| Illustrative decision walkthrough          | `sample`                |
 | Search/social metadata                     | `metadata`              |
 
-The example page is `/sample-deliverable/`. It is explicitly illustrative and is not a client report or a technical recommendation. Update the `sample` fields and `review.preview` to change it. Keep the downloadable `public/assets/sonarwave-review-example.txt` aligned with the example. The print view uses the full static sections.
+The example page is `/sample-deliverable/`. It presents an explicitly illustrative buying decision, not a client case or measured benchmark. The homepage summary at `#example-review` reveals the scenario, risk and recommendation without tabs or a page change. Update `sample.preview`, `sample.sections` and `sample.decision` together so the summary and walkthrough agree. Keep the downloadable `public/assets/sonarwave-review-example.txt` aligned with the example. The print view uses the full static sections.
 
 Keep one next step: discuss the AI project. The GPU Purchase Review is the entry offer for buyers; existing-hardware and software-improvement inquiries are also welcome. Vendor coordination, deployment and ongoing help have separate agreed scopes. The email action requests a time; it does not book a calendar appointment. Replace it with a real scheduling destination when one is provided, and describe the resulting action accurately.
 
@@ -30,7 +30,7 @@ Verify changes with `npm run build`, inspect desktop and mobile, and check both 
 
 ## Design and interaction ownership
 
-`DESIGN.md` documents the visual direction and illustration provenance. `src/styles/main.css` contains the responsive design tokens and styling; `src/components/ReviewPreview.tsx` uses accessible Radix tabs. `src/components/ProjectInquiry.tsx` manages stage selection, the email draft and copy fallback. These components contain short interface labels alongside the JSON marketing content.
+`DESIGN.md` documents the visual direction and illustration provenance. `src/styles/main.css` contains the responsive design tokens and styling; `src/components/ReviewPreview.tsx` renders a static, keyboard-reachable decision summary. `src/components/ProjectInquiry.tsx` manages stage selection, the email draft and copy fallback. It retains the stage and optional text in this browser tab’s session storage so browsing the example does not discard a draft; blocked or corrupt storage must not prevent composing an inquiry. These components contain short interface labels alongside the JSON marketing content.
 
 The form prepares an email; it does not submit data to a backend. Keep that distinction clear if editing its actions. The current hero is a conceptual hardware illustration, not a vendor product or client installation. The design QA evidence is in `design-qa.md`.
 

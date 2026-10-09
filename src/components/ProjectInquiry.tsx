@@ -1,15 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ArrowUpRight, Check, Copy, Mail } from 'lucide-react';
 
 import content from '../config/homepage.json';
 import * as gtag from '../lib/gtag';
 
+const draftKey = 'sonarwave-project-inquiry';
+
 const ProjectInquiry = () => {
   const [stage, setStage] = useState(content.contact.projectStages[0]);
   const [project, setProject] = useState('');
   const [copyStatus, setCopyStatus] = useState('');
   const [manualCopy, setManualCopy] = useState(false);
+  const [draftReady, setDraftReady] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(draftKey) || 'null');
+      if (saved && typeof saved === 'object') {
+        if (content.contact.projectStages.includes(saved.stage))
+          setStage(saved.stage);
+        if (typeof saved.project === 'string')
+          setProject(saved.project.slice(0, 1500));
+      }
+    } catch {
+      // The inquiry remains usable when browser storage is unavailable.
+    }
+    setDraftReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!draftReady) return;
+    try {
+      sessionStorage.setItem(draftKey, JSON.stringify({ stage, project }));
+    } catch {
+      // Keeping a draft is optional; it never blocks composing an inquiry.
+    }
+  }, [draftReady, stage, project]);
+
   const body = `Hello SonarWave,\n\nI would like to arrange a 20-minute call.\n\nProject stage: ${stage}\n\n${
     project.trim() ||
     'What we want to run:\nOur quote or existing hardware:\nOur timeline:'
