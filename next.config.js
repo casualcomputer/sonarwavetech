@@ -6,6 +6,20 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: "/sample-deliverable/",
+        destination: "/#infrastructure",
+        permanent: true,
+      },
+      {
+        source: "/assets/sonarwave-review-example.txt",
+        destination: "/#infrastructure",
+        permanent: true,
+      },
+    ];
+  },
   basePath: "",
   // The starter code load resources from `public` folder with `router.basePath` in React components.
   // So, the source code is "basePath-ready".

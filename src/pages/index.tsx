@@ -17,7 +17,6 @@ import {
 
 import Brand from '../components/Brand';
 import ProjectInquiry from '../components/ProjectInquiry';
-import ReviewPreview from '../components/ReviewPreview';
 import content from '../config/homepage.json';
 import * as gtag from '../lib/gtag';
 
@@ -116,8 +115,8 @@ const App = () => {
             <a href="#process" onClick={() => setMenuOpen(false)}>
               {content.navigation.process}
             </a>
-            <a href="#example-review" onClick={() => setMenuOpen(false)}>
-              {content.navigation.example}
+            <a href="#why-sonarwave" onClick={() => setMenuOpen(false)}>
+              {content.navigation.experience}
             </a>
             <a
               className="button button-small button-dark"
@@ -145,10 +144,6 @@ const App = () => {
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
               <ReviewLink />
-              <a className="text-link" href="#example-review">
-                {content.hero.secondaryAction}
-                <ArrowRight aria-hidden="true" />
-              </a>
             </div>
             <p className="hero-note">
               <span className="note-line" aria-hidden="true" />
@@ -259,6 +254,12 @@ const App = () => {
                 <span>{content.review.titleEmphasis}</span>
               </h2>
               <p>{content.review.description}</p>
+              <ReviewLink />
+              <p className="scope-note">{content.review.scope}</p>
+            </div>
+            <div className="review-scope">
+              <h3>{content.review.deliverablesTitle}</h3>
+              <p>{content.review.outcome}</p>
               <ul className="review-deliverables">
                 {content.review.deliverables.map((item) => (
                   <li key={item}>
@@ -267,10 +268,7 @@ const App = () => {
                   </li>
                 ))}
               </ul>
-              <ReviewLink />
-              <p className="scope-note">{content.review.scope}</p>
             </div>
-            <ReviewPreview />
           </div>
         </section>
 
@@ -389,8 +387,8 @@ const App = () => {
             <br />
             {content.footer.statement[1]}
           </p>
-          <a className="text-link" href="#example-review">
-            {content.footer.sampleAction}
+          <a className="text-link" href="#contact">
+            {content.hero.action}
             <ArrowUpRight aria-hidden="true" />
           </a>
         </div>

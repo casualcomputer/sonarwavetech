@@ -2,15 +2,15 @@
 
 ## Intent
 
-A premium engineering consultancy for executive and technical buyers of GPU systems. Help a visitor identify their purchasing or setup problem, inspect the review deliverable, and start a qualified conversation. Build on the existing simplified-sales-messaging branch and its factual scope.
+A premium engineering consultancy for executive and technical buyers of GPU systems. Help a visitor identify their purchasing or setup problem, understand the review deliverables, and start a qualified conversation. Build on the existing simplified-sales-messaging branch and its factual scope.
 
 ## Visual system
 
 - Warm paper background, deep ink typography, a single SonarWave red action color, restrained dark navy offer section.
 - Clear sans-serif display type, comfortable 16–18px body copy, 13–14px supporting text. Mobile heading sizes stay proportional to the viewport.
 - A real subject in the hero: GPU server and workstation, shown as a clearly labelled conceptual illustration.
-- Open layouts and dividers establish hierarchy. Reserve a paper treatment for the example deliverable and a contained surface for the inquiry form.
-- Repeated primary CTA: Discuss your AI project. Secondary action: read the inline buying example.
+- Open layouts and dividers establish hierarchy. Use open columns for service scope and deliverables, and a contained surface for the inquiry form.
+- Repeated primary CTA: Discuss your AI project.
 - Useful interactions: keyboard-reachable section links, FAQ disclosure, project-stage selection, editable inquiry with draft retention and clipboard fallback. Motion is short and supports state; reduced-motion settings disable it.
 
 ## Composition
@@ -20,17 +20,17 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 3. Three concise delivery commitments without unsupported client logos or metrics.
 4. Pain → solution rows connecting product delivery risk, performance on target GPUs and evolving AI needs to outcomes.
 5. Founder experience with explicit relevance to buying and deployment decisions.
-6. Dark purchase-review section with scope and a paper-like, static buying-decision summary.
+6. Dark purchase-review section with actual service scope and written deliverables.
 7. Three service stages: advise and coordinate, deploy and optimize, support and evolve.
 8. FAQ and final project inquiry.
 9. Legal name, consistent contact details and useful footer links.
 
 ## Implementation choices
 
-Use native links for the inline example and the detailed walkthrough. Show essential reasoning directly, with no tabs or disclosure gates. The detailed page leads with the conditional decision; download and print appear after the content. Use Lucide icons consistently. Keep the existing framework and avoid a Tailwind migration solely for cosmetic changes. Use CSS for short transitions; no additional motion engine is required.
+Use native section links and one clear contact action. Do not add fictional cases, reports or walkthroughs. Use Lucide icons consistently. Keep the existing framework and avoid a Tailwind migration solely for cosmetic changes. Use CSS for short transitions; no additional motion engine is required.
 
 ## Evidence and assets
 
 The hardware image was generated for this site with Image Gen on 2026-10-09. It is conceptual imagery, not a real client installation, a vendor product specification or an endorsement. Original: `/workspace/generated_images/exec-b4e4051c-09fb-4344-8355-5b6bdd522a31.png`. Website asset: `public/assets/images/gpu-systems.webp` (1400 × 933, optimized WebP).
 
-Existing SonarWave logo is retained. No founder identity, client proof, prices, delivery promises or booking provider may be invented. The example report is labelled illustrative. Email actions prepare a message; they do not submit an inquiry or book an appointment.
+Existing SonarWave logo is retained. No founder identity, client proof, prices, delivery promises or booking provider may be invented. Email actions prepare a message; they do not submit an inquiry or book an appointment.

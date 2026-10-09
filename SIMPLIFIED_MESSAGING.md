@@ -1,6 +1,10 @@
-# Simplified homepage alternative
+# Simplified homepage evolution
 
 Originally developed on `simplified-sales-messaging`, then selected by the user and merged into `main`. Based on the supplied October 9, 2026 CEO/CTO messaging brief.
+
+## Current direction
+
+The user has rejected fictional scenarios and example reports as distracting and harmful to trust. The homepage now describes actual services and deliverables, supported by the supplied founder experience, and leads directly to contact. The old example page and download redirect to the purchase-review section. Earlier implementation notes below record the prior iterations.
 
 ## What changed and why
 
