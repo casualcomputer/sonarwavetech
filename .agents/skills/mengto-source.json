@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/MengTo/skills",
+  "revision": "83a47fee32f0b6349bff1fede99257a5ef03dc93",
+  "license": "MIT",
+  "skills": [
+    "ui/design-first-ui-prompting",
+    "ui/no-ai-design-slop",
+    "ui/audit-ai-design-slop",
+    "web-design/landing-page"
+  ]
+}
