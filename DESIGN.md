@@ -18,7 +18,7 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 1. Compact brand/navigation header.
 2. Two-column hero: concrete buying promise and CTA beside hardware illustration. Phone layout puts the promise and action first.
 3. Three concise delivery commitments without unsupported client logos or metrics.
-4. Pain → solution rows connecting quote uncertainty, data constraints and deployment ownership to outcomes.
+4. Pain → solution rows connecting product delivery risk, performance on target GPUs and evolving AI needs to outcomes.
 5. Founder experience with explicit relevance to buying and deployment decisions.
 6. Dark purchase-review section with scope and a paper-like, interactive example report.
 7. Three service stages: advise and coordinate, deploy and optimize, support and evolve.

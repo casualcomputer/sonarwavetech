@@ -6,20 +6,20 @@ This is an example of the review format, not a client report or a hardware recom
 Example brief: a team wants a local AI assistant for internal documents and is comparing GPU server quotes.
 
 1. Requirements
-Record the models, inference-engine support, user demand, response-time needs, data restrictions and budget. Identify missing information before choosing hardware.
+Record the product vision, required features, models, developer expertise and existing software. Connect these to user demand, response-time needs, data restrictions and budget.
 
 2. Quote assessment
-Compare each quote with the requirements. Note GPU memory, software support, storage, networking, warranty and any assumptions the vendor needs to confirm.
+Assess whether the proposed hardware supports the required models and software, beyond GPU memory alone. Check facilities, networking, storage, warranty and vendor assumptions.
 
 3. Installation readiness
 Check power, cooling, rack or workstation space, network access and who owns installation and system access.
 
-4. Cloud validation, if scoped
-Record the tested GPU, model, inference engine, workload and configuration, alongside throughput, response times and running costs. Explain what the results mean for sizing and which differences still need validation on the proposed system.
+4. Tests on target GPUs, if scoped
+Test agreed workloads on the GPUs being considered. Report compatibility findings, response times, request capacity and running costs, with the test conditions and any limits on applying the results to the complete system.
 
 5. Recommendation & validation
 Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing.
 
-The outcome is a decision record: what to buy, why it fits, and what still needs to be checked.
+The outcome is a decision record: how the system supports your product vision, what the evidence shows and what still needs to be checked before you commit.
 
 Contact: info@sonarwave.org | +1 (647) 667-3518

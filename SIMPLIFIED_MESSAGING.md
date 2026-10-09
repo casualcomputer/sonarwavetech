@@ -1,13 +1,13 @@
 # Simplified homepage alternative
 
-Branch: `simplified-sales-messaging`. Based on the supplied October 9, 2026 CEO/CTO messaging brief.
+Originally developed on `simplified-sales-messaging`, then selected by the user and merged into `main`. Based on the supplied October 9, 2026 CEO/CTO messaging brief.
 
 ## What changed and why
 
 - One lead offer, **GPU Purchase Review**, makes the first buying decision clear. Deployment, optimization and ongoing improvement remain visible as the next stages.
 - The hero names GPU servers/workstations and on-premises AI, then states the outcome: **Buy the right GPU system. Put AI to work.**
 - Three open rows place the pain, business consequence, solution and deliverable together: quote uncertainty, underused hardware and changing software needs.
-- Removed standalone training/sales-enablement sections, repeated technical detail and the 200× result from this alternative. Those services remain on main; this branch focuses the homepage on one buyer journey.
+- Removed standalone training/sales-enablement sections, repeated technical detail and the 200× result from this alternative. The selected homepage focuses on one buyer journey with ongoing help and team support.
 - Kept commercial boundaries and specific deliverables. Added an explicitly illustrative review-format page so the secondary action leads to something useful.
 - Repeated one honest call request and added a mobile action that appears after the hero and hides at contact.
 - Retained the established mobile typography improvements. Updated metadata to match the offer and generate the example page's own canonical path.
@@ -26,9 +26,9 @@ These facts are omitted from public copy rather than replaced with invented valu
 
 ## Review scope
 
-This is a separate homepage option, not a launch of every proposed page in the brief. Industry landing pages, guides and a founder biography require additional approved facts. No client metrics, privacy/compliance guarantees, zero-downtime promises or universal compatibility claims are published.
+The selected homepage does not launch every proposed page in the brief. Industry landing pages, guides and a founder biography require additional approved facts. No client metrics, privacy/compliance guarantees, zero-downtime promises or universal compatibility claims are published.
 
-`homepage.json` remains the editing source. `CONTENT_GUIDE.md` maps its simplified keys; `SALES_PATH.md` describes the buyer and measurement path. Build and browser verification are recorded with the preview artifacts. The branch is for comparison and has not been merged or deployed to production.
+`homepage.json` remains the editing source. `CONTENT_GUIDE.md` maps its simplified keys; `SALES_PATH.md` describes the buyer and measurement path. Build and browser verification are recorded with the preview artifacts. The homepage has been merged and pushed to main; live deployment has not been verified.
 
 ## October 9 design implementation
 
@@ -38,4 +38,8 @@ The provided LinkedIn feed URL does not identify a founder, so no name or profil
 
 ## Positioning update
 
-Purchase advice is now explicit, with optional coordination across vendors and resellers for OEM delivery and installation. The service path includes deployment optimization and help as software needs evolve. A new “Why SonarWave” section connects the founder’s personal aerospace data-center procurement, government AI procurement and GenAI development experience to client decisions. The claim that a chatbot was “the first” is omitted because the exact public project reference and scope have not been established. Public Service Data Challenge participation is a possible future biography detail; the homepage leads with directly relevant procurement and development experience.
+Purchase advice is now explicit, with optional coordination across vendors and resellers for OEM delivery and installation. The service path includes deployment optimization and help as software needs evolve. A new “Why SonarWave” section connects the founder’s personal aerospace data-center procurement, government AI procurement and GenAI development experience to client decisions. The founder subsequently clarified that the chatbot was the first federal-government GenAI chatbot to reach production and requested that wording. The copy reflects that supplied claim without inventing a country, date or budget figure. Public Service Data Challenge participation is a possible future biography detail; the homepage leads with directly relevant procurement and development experience.
+
+## Product-vision revision
+
+The copy now explains the business consequence of hardware/software mismatch: avoidable engineering work and roadmap delays. It distinguishes GPU memory from model/software compatibility and makes benchmarks on specific target GPUs visible in the purchase review and example. Ongoing optimization is framed around freeing the client’s team to focus on its domain, workflows and ROI. The separate prior-work disclaimer was removed at the user’s request; founder attribution remains in the experience statements. Provider names and proprietary methods remain private.

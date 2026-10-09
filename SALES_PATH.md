@@ -29,12 +29,16 @@ Compare qualified inquiries per visit and inquiry-to-paid-review progression aga
 
 ## Why SonarWave
 
-The differentiator is procurement advice informed by experience developing AI products. The founder has personally worked on aerospace data-center procurement, government AI procurement and GenAI development in aerospace and taxation, and contributed to a federal-government GenAI chatbot. These facts were supplied by the founder in this conversation; no independent verification or client endorsement is implied. The page attributes them to the founder and explains the relevance to workload fit, documented decisions and deployment.
+The differentiator is translating a product vision and developer needs into specific software and hardware requirements, then testing agreed workloads on target GPUs before procurement. The founder has personally worked on aerospace data-center procurement, government AI procurement and GenAI development in aerospace and taxation, and contributed to the first federal-government GenAI chatbot to reach production, as clarified by the founder. These facts were supplied by the founder in this conversation; no independent verification or client endorsement is implied. The page attributes them to the founder and explains the relevance to workload fit, documented decisions and deployment.
 
 SonarWave advises on hardware purchases and can coordinate multiple vendors and resellers for OEM delivery and installation. The proposal must identify purchasing, installation and support responsibilities. No vendor-independence, authorized-reseller or commission-free claim is made. Ongoing help is available under an agreed scope; no 24/7 coverage or uptime guarantee is implied.
 
 ## Pre-purchase inference validation
 
-The founder also supplied personal experience testing inference on cloud infrastructure. Cloud benchmarking is an optional, separately scoped part of the purchase decision: agree workload, environment and budget; record throughput, response time and running cost; document what remains to validate on the proposed hardware. Do not publish invented benchmark results or imply cloud results guarantee identical on-premises performance. The web example and downloadable file describe the methodology without numerical results.
+The founder also supplied personal experience testing inference on cloud infrastructure. Benchmarking on target GPUs is an optional, separately scoped part of the purchase decision: agree workload, environment and budget; record throughput, response time and running cost; document what remains to validate on the proposed hardware. Do not publish invented benchmark results or imply cloud results guarantee identical on-premises performance. The web example and downloadable file describe the methodology without numerical results.
 
 Keep public positioning focused on buyer outcomes and high-level validation. Provider names, sourcing channels and proprietary testing or tuning methods are private unless the user explicitly approves disclosure.
+
+## Executive framing
+
+Explain the consequence of a mismatch as developer rework and delivery delays. GPU memory is one requirement; models, software and hardware must be compatible with the intended product and the team’s expertise. Lead with measured workload results and remaining risks, without promising zero surprises or claiming all competing vendors rely on speculation. Ongoing help handles agreed model, software and infrastructure changes so the client can focus on its domain, workflows and ROI.

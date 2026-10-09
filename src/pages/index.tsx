@@ -247,7 +247,6 @@ const App = () => {
                 </article>
               ))}
             </div>
-            <p className="experience-note">{content.experience.note}</p>
           </div>
         </section>
 

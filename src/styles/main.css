@@ -476,12 +476,6 @@ h3 {
   color: var(--ink);
   margin-top: 8px;
 }
-.experience-note {
-  margin-top: 32px;
-  max-width: 660px;
-  color: var(--muted);
-  font-size: 13px;
-}
 .review-section {
   padding-block: 84px;
   background: var(--navy);

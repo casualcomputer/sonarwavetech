@@ -1,6 +1,6 @@
 # Editing the simplified homepage
 
-This branch tests one buying journey: **GPU Purchase Review → deployment and optimization → ongoing improvement**. Marketing copy lives in `src/config/homepage.json`; page structure lives in `src/pages/index.tsx`. Main retains the broader service-led homepage until this alternative is selected.
+This branch tests one buying journey: **GPU Purchase Review → deployment and optimization → ongoing improvement**. Marketing copy lives in `src/config/homepage.json`; page structure lives in `src/pages/index.tsx`. The user selected this homepage and merged it into main.
 
 | Content                                    | JSON key                |
 | ------------------------------------------ | ----------------------- |
@@ -24,9 +24,9 @@ Keep one next step: discuss the AI project. The GPU Purchase Review is the entry
 
 Keep each pain directly beside the service and outcome. Use plain language in the hero and business consequences in the pain/solution rows; keep software, workload and hardware details in the deliverables.
 
-Before publishing, review the remaining business facts in `SIMPLIFIED_MESSAGING.md`. Scope, pricing, credentials and relationships must come from SonarWave. Attribute the supplied procurement and GenAI experience to the founder personally; do not turn prior work into SonarWave client claims. Do not add placeholders or unsupported claims to public copy. Keep `contact.phone` and `contact.phoneHref` consistent.
+Before publishing, review the remaining business facts in `SIMPLIFIED_MESSAGING.md`. Scope, pricing, credentials and relationships must come from SonarWave. Use natural founder attribution for the supplied procurement and GenAI experience; do not add a separate prior-work disclaimer or turn it into company client claims. Do not add placeholders or unsupported claims to public copy. Keep `contact.phone` and `contact.phoneHref` consistent.
 
-Verify changes with `npm run build`, inspect desktop and mobile, and check both the example link and contact draft. Publishing this branch for review does not replace main.
+Verify changes with `npm run build`, inspect desktop and mobile, and check both the example link and contact draft. The current authorized publishing target is main.
 
 ## Design and interaction ownership
 

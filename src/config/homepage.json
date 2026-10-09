@@ -2,7 +2,7 @@
   "metadata": {
     "site_name": "SonarWave Technologies",
     "title": "GPU Procurement Advice & Production AI | SonarWave Technologies",
-    "description": "GPU purchase advice informed by AI development experience. SonarWave reviews quotes, coordinates vendors, deploys inference software and helps your system evolve.",
+    "description": "Align GPU purchases with your product vision. SonarWave checks model and software compatibility, tests workloads on target GPUs, and supports deployment and ongoing improvements.",
     "site_url": "https://sonarwavetech.com",
     "og_image": "/assets/images/logo.png",
     "locale": "en"
@@ -24,39 +24,39 @@
     "eyebrow": "GPU PURCHASE ADVICE & PRODUCTION AI",
     "title": "Buy the right GPU system.",
     "titleEmphasis": "Put AI to work.",
-    "description": "We help you choose GPU servers and workstations for the AI you need to run. From purchase advice to inference software and ongoing improvements, we turn hardware decisions into usable AI capacity.",
+    "description": "We align GPU servers and workstations with your product vision, the models you need and your developers’ expertise. Test before you buy, then deploy and improve the system as your business grows.",
     "action": "Discuss your AI project",
     "secondaryAction": "See an example review",
     "note": "Founder experience in aerospace data-center procurement and government AI procurement.",
     "visual": {
       "eyebrow": "HARDWARE + SOFTWARE + PEOPLE",
-      "title": "Built around your workload.",
+      "title": "Built around your product vision.",
       "description": "GPU servers & AI workstations",
       "caption": "Conceptual hardware illustration"
     }
   },
   "pains": {
     "eyebrow": "THE DECISIONS THAT MATTER",
-    "title": "A GPU quote is only part of the decision.",
-    "description": "The wrong hardware or software stack can limit the return on your investment. We connect procurement decisions to how your AI will run in practice.",
+    "title": "Your hardware choice shapes what your team can deliver.",
+    "description": "The wrong purchase can force your developers into avoidable engineering work, delay your roadmap and make the product you planned harder to deliver.",
     "items": [
       {
-        "pain": "Will this quote deliver what we need?",
-        "impact": "A GPU specification alone cannot tell you whether your models will fit or your users will get the performance they need.",
-        "solution": "We assess vendor quotes against your workloads and can test inference on cloud GPUs before you commit to a large hardware purchase.",
-        "outcome": "A buying decision informed by workload evidence, with remaining risks made explicit."
+        "pain": "Will this system support our product vision?",
+        "impact": "Enough GPU memory does not mean your model will run. The model, software and hardware must work together—and fit the way your developers build.",
+        "solution": "We translate your product goals into model, software and hardware requirements, taking your developers’ expertise and existing tools into account.",
+        "outcome": "A system plan that supports your roadmap and reduces avoidable engineering work."
       },
       {
-        "pain": "Are we getting enough from our GPUs?",
-        "impact": "A poorly matched inference engine or deployment design can leave expensive hardware underused and users waiting.",
-        "solution": "We select and tune the software that serves your models, then measure throughput and response times against agreed workloads. Testing can start on cloud GPUs before purchase and continue on your deployed system.",
-        "outcome": "Measured performance against your requirements, with clear next steps."
+        "pain": "How will our workloads perform on these GPUs?",
+        "impact": "A specification sheet cannot show how your application will behave under real demand. Finding the limits after purchase can mean rework or more spending.",
+        "solution": "We can benchmark your workloads on the specific GPUs you are considering before you buy. We test compatibility, response times and how many requests the system can handle, then tune the software.",
+        "outcome": "Measured results to inform the purchase, with limitations identified before you commit."
       },
       {
         "pain": "What happens when our AI needs change?",
-        "impact": "New models, software releases and growing demand create work after launch. Your team needs a way to assess changes and manage disruption.",
-        "solution": "We can evaluate upgrades, adapt the deployment, plan fallback options and build your team’s operating skills.",
-        "outcome": "A scoped improvement plan that helps your system stay useful."
+        "impact": "Keeping up with weekly model and software changes can pull your team away from improving your product and business workflows.",
+        "solution": "We evaluate relevant new models, optimize how your workloads run and manage agreed infrastructure improvements. Your team can focus on its domain expertise, business workflows and return on investment.",
+        "outcome": "Ongoing technical help that keeps infrastructure work from consuming your product team’s attention."
       }
     ]
   },
@@ -64,18 +64,18 @@
     "eyebrow": "START WITH A GPU PURCHASE REVIEW",
     "title": "A confident decision.",
     "titleEmphasis": "Before you commit.",
-    "description": "Start with a focused review of your GPU purchase. Where performance needs validating, we can scope inference tests using cloud GPUs to inform hardware sizing before you commit.",
+    "description": "Go beyond the specification sheet. We connect your product vision to the software and hardware it requires, and can test your workloads on target GPUs before a major purchase. Surface compatibility gaps and performance limits while you can still change the plan.",
     "name": "GPU Purchase Review",
     "audience": "FOR GPU BUYERS & TECHNICAL LEADERS",
     "deliverables": [
-      "Workload, model and inference-software requirements",
-      "Recommended specifications and vendor quote gaps",
-      "Power, cooling, networking and installation requirements",
-      "Optional cloud benchmarks to inform hardware sizing",
-      "Performance and compatibility checks before you commit"
+      "Product goals mapped to model, software and hardware requirements",
+      "Compatibility review that accounts for your developers’ tools and expertise",
+      "Vendor quote, facility and installation requirements",
+      "Optional workload benchmarks on the GPUs you are considering",
+      "A recommendation with test findings, tradeoffs and remaining checks"
     ],
     "outcome": "Your deliverable: a written recommendation with the reasons behind it.",
-    "scope": "Scope, fee and delivery schedule are agreed before work starts. Cloud testing is scoped and budgeted separately; hardware, software and deployment costs are separate.",
+    "scope": "Scope, fee and delivery schedule are agreed before work starts. Benchmarking is scoped and budgeted separately; hardware, software and deployment costs are separate.",
     "sampleAction": "See an example review",
     "preview": [
       {
@@ -84,19 +84,19 @@
         "title": "Will it run what you need?",
         "rows": [
           {
-            "label": "Models",
-            "value": "Model memory needs and inference-engine support"
+            "label": "Product",
+            "value": "Features, models and user demand you need to support"
           },
           {
-            "label": "Demand",
-            "value": "Users, workloads and response-time needs"
+            "label": "Team",
+            "value": "Your developers’ tools, expertise and software requirements"
           },
           {
-            "label": "Constraints",
-            "value": "Data requirements, budget and facilities"
+            "label": "Fit",
+            "value": "Model, software and hardware compatibility—not memory alone"
           }
         ],
-        "outcome": "Workload-based hardware specifications"
+        "outcome": "A system plan aligned with your product vision"
       },
       {
         "id": "quote",
@@ -129,7 +129,7 @@
           },
           {
             "label": "Validate",
-            "value": "Optional cloud benchmarks and target-system checks"
+            "value": "Workload tests on target GPUs and remaining system checks"
           },
           {
             "label": "Plan",
@@ -148,18 +148,18 @@
     "stages": [
       {
         "title": "Advise & coordinate",
-        "description": "Review requirements and quotes. If requested, coordinate OEM products, delivery and installation with vendors and resellers.",
+        "description": "Translate your product goals into requirements. Scope tests on target GPUs before purchase and, if requested, coordinate OEM delivery and installation with vendors.",
         "deliverable": "Purchase recommendation and agreed vendor responsibilities"
       },
       {
         "title": "Deploy & optimize",
-        "description": "Configure models and inference software. Test agreed workloads, document the setup and train your team to operate it.",
+        "description": "Deploy state-of-the-art models suited to your product, hardware and developers. Tune performance, test agreed workloads and equip your team to operate the system.",
         "deliverable": "Configured system, test results and team handover"
       },
       {
         "title": "Support & evolve",
-        "description": "Help after deployment as models, software and demand change. Evaluate updates, tune performance and plan fallback options.",
-        "deliverable": "Agreed software improvements and team upskilling"
+        "description": "Evaluate model and software changes, optimize workloads and manage agreed improvements so your team can focus on its business domain and workflows.",
+        "deliverable": "Ongoing optimization, upgrade planning and team support"
       }
     ],
     "accountability": "Define success before work starts: workloads, user demand and acceptance checks. Ongoing help has an agreed scope, schedule and support responsibilities."
@@ -178,7 +178,11 @@
       },
       {
         "question": "Can we test performance before buying hardware?",
-        "answer": "Yes. We can scope inference tests using cloud GPUs to compare throughput, response times and running costs for agreed workloads. We agree the test environment and budget upfront. Results inform the purchase recommendation; differences in hardware and configuration still need validation on the proposed system."
+        "answer": "Yes. We can benchmark your workloads on the specific GPUs you are considering, testing whether the models and software work together and measuring response times, capacity and running costs. We agree the test configuration and budget upfront, then document the results and anything still to validate on the complete system."
+      },
+      {
+        "question": "Is enough GPU memory all we need to run a model?",
+        "answer": "No. Memory is one requirement. The model’s software must also support the GPU and work with the rest of the system. We assess those dependencies alongside your developers’ tools and expertise, then scope tests to check that the proposed setup can deliver your product requirements."
       },
       {
         "question": "We already own GPUs. Can you help?",
@@ -186,11 +190,11 @@
       },
       {
         "question": "Can you help after deployment?",
-        "answer": "Yes. We can help as your models, software stack and user demand evolve, including upgrade evaluation, performance tuning, fallback planning and team training. We agree the scope, schedule and support responsibilities with you; ongoing help is separate from the purchase review."
+        "answer": "Yes. We can evaluate new models, optimize workloads, plan upgrades and fallback options, and help your team build operating skills. This gives your developers more time to focus on product features and business workflows. Ongoing work has an agreed scope, schedule and support responsibilities, separate from the purchase review."
       },
       {
         "question": "Why involve SonarWave alongside our IT team or vendor?",
-        "answer": "Our founder brings experience in aerospace data-center procurement, government AI procurement and GenAI product development. We apply that perspective to the connection between your business requirements, proposed hardware and inference software, working with your team and vendors through evaluation, deployment and later improvements."
+        "answer": "We turn your product vision into software and hardware requirements, then use agreed workload tests to assess the proposed system. Our founder brings aerospace data-center procurement, government AI procurement and production GenAI experience. Your team and vendors gain a practical basis for decisions that goes beyond the specification sheet."
       },
       {
         "question": "How are pricing and vendor coordination handled?",
@@ -208,11 +212,11 @@
     "eyebrow": "LET’S MAKE THE NEXT STEP CLEAR",
     "title": "Bring your quote.",
     "titleEmphasis": "Or your questions.",
-    "description": "Use a 20-minute conversation to discuss a planned purchase, an existing system or changing software needs. We’ll identify the review, deployment or ongoing help that fits your project.",
+    "description": "Tell us what you want to build, what your developers need and where the project stands. Use a 20-minute conversation to identify the purchase review, hardware testing or ongoing help that fits.",
     "callTitle": "Let’s talk about your project.",
     "points": [
-      "Discuss your workloads and current constraints",
-      "Identify the purchase, performance or software challenge",
+      "Discuss your product vision and your team’s needs",
+      "Identify the purchase, performance or delivery risk",
       "Agree the next step toward a scoped proposal"
     ],
     "action": "Prepare my inquiry",
@@ -241,53 +245,52 @@
     "sections": [
       {
         "title": "1. Requirements",
-        "description": "Record the models, inference-engine support, user demand, response-time needs, data restrictions and budget. Identify missing information before choosing hardware."
+        "description": "Record the product vision, required features, models, developer expertise and existing software. Connect these to user demand, response-time needs, data restrictions and budget."
       },
       {
         "title": "2. Quote assessment",
-        "description": "Compare each quote with the requirements. Note GPU memory, software support, storage, networking, warranty and any assumptions the vendor needs to confirm."
+        "description": "Assess whether the proposed hardware supports the required models and software, beyond GPU memory alone. Check facilities, networking, storage, warranty and vendor assumptions."
       },
       {
         "title": "3. Installation readiness",
         "description": "Check power, cooling, rack or workstation space, network access and who owns installation and system access."
       },
       {
-        "title": "4. Cloud validation, if scoped",
-        "description": "Record the tested GPU, model, inference engine, workload and configuration, alongside throughput, response times and running costs. Explain what the results mean for sizing and which differences still need validation on the proposed system."
+        "title": "4. Tests on target GPUs, if scoped",
+        "description": "Test agreed workloads on the GPUs being considered. Report compatibility findings, response times, request capacity and running costs, with the test conditions and any limits on applying the results to the complete system."
       },
       {
         "title": "5. Recommendation & validation",
         "description": "Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing."
       }
     ],
-    "closing": "The outcome is a decision record: what to buy, why it fits, and what still needs to be checked."
+    "closing": "The outcome is a decision record: how the system supports your product vision, what the evidence shows and what still needs to be checked before you commit."
   },
   "commitments": [
-    "Purchase advice informed by AI development",
-    "Optional vendor coordination",
-    "Help before and after deployment"
+    "Product vision before hardware specifications",
+    "Workload testing before a major purchase",
+    "Ongoing help as your AI needs evolve"
   ],
   "experience": {
     "eyebrow": "WHY SONARWAVE",
-    "title": "Procurement advice grounded in AI development experience.",
-    "description": "Our founder brings procurement and GenAI development experience, plus hands-on inference testing. That connects buying decisions to measured workload performance.",
+    "title": "Experience taking AI from procurement to production.",
+    "description": "Our founder brings years of hands-on procurement and GenAI development experience on funded, real-world projects. That means understanding the product, engineering and budget consequences of a hardware decision.",
     "items": [
       {
         "title": "Aerospace data-center procurement",
         "experience": "Our founder has experience procuring data-center infrastructure in the aerospace sector.",
-        "relevance": "We assess the wider buying decision: workload fit, facility needs, vendor scope and installation readiness."
+        "relevance": "We assess how the purchase supports your product plans, facility needs and delivery responsibilities."
       },
       {
         "title": "Government AI procurement",
         "experience": "Our founder has experience with government procurement for AI.",
-        "relevance": "We turn technical requirements into a documented recommendation that buyers and decision-makers can assess."
+        "relevance": "We turn product and technical requirements into a documented buying decision, with costs, tradeoffs and validation steps made clear."
       },
       {
-        "title": "GenAI product development",
-        "experience": "Our founder led GenAI product development in aerospace and taxation, and contributed to a federal-government GenAI chatbot.",
-        "relevance": "We connect hardware choices to model support, inference software, workload testing and the people who will operate the system."
+        "title": "GenAI in production",
+        "experience": "Our founder contributed to the first federal-government GenAI chatbot to reach production, and led GenAI product development in aerospace and taxation.",
+        "relevance": "We connect your product vision to the models, software and tested hardware your developers need to deliver it."
       }
-    ],
-    "note": "These are our founder’s personal professional experiences, including work before SonarWave."
+    ]
   }
 }
