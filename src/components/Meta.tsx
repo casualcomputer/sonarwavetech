@@ -1,8 +1,10 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { AppConfig } from '../utils/AppConfig';
 
 const Meta = () => {
+  const { pathname } = useRouter();
   const {
     title,
     description,
@@ -10,6 +12,11 @@ const Meta = () => {
     site_url: siteUrl,
     og_image: ogImage,
   } = AppConfig;
+
+  const canonicalUrl = new URL(
+    pathname === '/' ? '/' : `${pathname}/`,
+    `${siteUrl}/`
+  ).toString();
 
   return (
     <Head>
@@ -22,13 +29,13 @@ const Meta = () => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:url" content={siteUrl} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <link rel="canonical" href={siteUrl} />
+      <link rel="canonical" href={canonicalUrl} />
     </Head>
   );
 };

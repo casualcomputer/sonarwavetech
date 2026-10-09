@@ -1,66 +1,63 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
-  ArrowDownIcon as FiArrowDown,
-  ArrowUpIcon as FiArrowUpRight,
-  CheckIcon as FiCheck,
-  CheckCircleIcon as FiCheckCircle,
-  ChevronDownIcon as FiChevronDown,
-  ServerIcon,
-  MenuIcon as FiMenu,
-  XIcon as FiX,
+  ArrowUpIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  MenuIcon,
+  XIcon,
 } from '@heroicons/react/outline';
+import Link from 'next/link';
 
+import Brand from '../components/Brand';
 import content from '../config/homepage.json';
-import { faqs, infrastructure } from '../config/offer';
 import * as gtag from '../lib/gtag';
 
-const Brand = () => (
-  <a className="brand" href="#top" aria-label="SonarWave home">
-    <span className="brand-mark" aria-hidden="true">
-      <img src="/assets/images/logo.png" alt="" width="200" height="200" />
-    </span>
-    <span className="brand-type">
-      <span className="brand-name">{content.brand.name}</span>
-      <span className="brand-sub">{content.brand.suffix}</span>
-    </span>
+const ReviewLink = () => (
+  <a className="button button-red" href="#contact">
+    {content.hero.action}
+    <ArrowUpIcon className="diagonal-arrow" aria-hidden="true" />
   </a>
 );
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [inquiryId, setInquiryId] = useState(content.contact.defaultInquiry);
-  const inquiry = content.contact.inquiryOptions.find(
-    (option) => option.id === inquiryId
-  );
+  const [showMobileAction, setShowMobileAction] = useState(false);
   const contactHref = `mailto:${
-    infrastructure.email
+    content.contact.email
   }?subject=${encodeURIComponent(
-    `${content.contact.emailSubject}: ${inquiry?.label || ''}`
-  )}&body=${encodeURIComponent(
-    `${content.contact.emailGreeting}\n\nService: ${inquiry?.label || ''}\n\n${
-      inquiry?.prompt || ''
-    }\n\n${content.contact.emailClosing}`
-  )}`;
+    content.contact.emailSubject
+  )}&body=${encodeURIComponent(content.contact.emailBody)}`;
 
-  const selectInquiry = (id: string) => {
-    setInquiryId(id);
-    gtag.event({
-      action: 'service_selected',
-      category: 'engagement',
-      label: id,
+  useEffect(() => {
+    const hero = document.querySelector('.hero');
+    const contact = document.querySelector('#contact');
+    let pastHero = false;
+    let contactVisible = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === hero) {
+          pastHero =
+            !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
+        }
+        if (entry.target === contact) contactVisible = entry.isIntersecting;
+      });
+      setShowMobileAction(pastHero && !contactVisible);
     });
-  };
+    if (hero) observer.observe(hero);
+    if (contact) observer.observe(contact);
+    return () => observer.disconnect();
+  }, []);
 
-  const trackContact = () =>
+  const trackContact = (channel: string) =>
     gtag.event({
       action: 'contact_click',
       category: 'engagement',
-      label: inquiryId,
+      label: `gpu-purchase-review:${channel}`,
     });
 
   return (
-    <div className="sonar-site" id="top">
+    <div className="sonar-site simplified-site" id="top">
       <a className="skip-link" href="#main">
         {content.navigation.skip}
       </a>
@@ -75,32 +72,31 @@ const App = () => {
             aria-controls="main-nav"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <FiX /> : <FiMenu />}
+            {menuOpen ? <XIcon /> : <MenuIcon />}
           </button>
           <nav
             id="main-nav"
             aria-label="Main navigation"
             className={menuOpen ? 'nav-links is-open' : 'nav-links'}
-            onKeyDown={(e) => {
-              if (e.key === 'Escape') setMenuOpen(false);
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') setMenuOpen(false);
             }}
           >
             <a href="#infrastructure" onClick={() => setMenuOpen(false)}>
-              {content.navigation.procurement}
+              {content.navigation.review}
             </a>
             <a href="#process" onClick={() => setMenuOpen(false)}>
-              {content.navigation.inference}
+              {content.navigation.process}
             </a>
-            <a href="#training" onClick={() => setMenuOpen(false)}>
-              {content.navigation.training}
+            <a href="#faq" onClick={() => setMenuOpen(false)}>
+              {content.navigation.faq}
             </a>
             <a
               className="button button-small button-dark"
               href="#contact"
               onClick={() => setMenuOpen(false)}
             >
-              {content.navigation.contact}{' '}
-              <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
+              {content.navigation.contact}
             </a>
           </nav>
         </div>
@@ -109,7 +105,7 @@ const App = () => {
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span />
+              <span aria-hidden="true" />
               {content.hero.eyebrow}
             </p>
             <h1 id="hero-title">
@@ -119,369 +115,129 @@ const App = () => {
             </h1>
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
-              <a className="button button-red" href="#contact">
-                {content.hero.primaryAction}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-              </a>
-              <a className="text-link" href="#infrastructure">
+              <ReviewLink />
+              <Link className="text-link" href="/sample-deliverable/">
                 {content.hero.secondaryAction}
-                <FiArrowDown aria-hidden="true" />
-              </a>
+              </Link>
             </div>
             <p className="hero-note">{content.hero.note}</p>
-            <p className="partner-path">
-              {content.hero.partnerPrompt}{' '}
-              <a href="#sales-training">{content.hero.partnerAction}</a>
-            </p>
           </div>
-          <div
-            className="delivery-map"
-            aria-label="Our services and the outcomes they support"
+          <aside
+            className="review-summary"
+            aria-labelledby="review-summary-title"
           >
-            <div className="delivery-map-heading">
-              <ServerIcon aria-hidden="true" />
-              <span className="eyebrow">{content.hero.outcomesHeading}</span>
-            </div>
-            <ol>
-              {content.hero.outcomes.map(({ title, detail, href }, i) => (
-                <li key={title}>
-                  <span className="delivery-index">0{i + 1}</span>
-                  <div>
-                    <h2>
-                      <a href={href}>{title}</a>
-                    </h2>
-                    <p>{detail}</p>
-                  </div>
+            <p className="eyebrow">{content.hero.offerEyebrow}</p>
+            <h2 id="review-summary-title">{content.hero.offerTitle}</h2>
+            <p>{content.hero.offerDescription}</p>
+            <ul>
+              {content.hero.offerPoints.map((point) => (
+                <li key={point}>
+                  <CheckIcon aria-hidden="true" />
+                  {point}
                 </li>
               ))}
-            </ol>
-            <div className="delivery-map-footer">
-              <FiCheckCircle aria-hidden="true" />
-              {content.hero.outcomesFooter}
-            </div>
-          </div>
+            </ul>
+            <p className="review-summary-note">{content.hero.offerNote}</p>
+          </aside>
         </section>
-        <div className="trust-strip">
-          <div className="container trust-inner">
-            <span className="eyebrow">{content.experienceStrip.eyebrow}</span>
-            <span>
-              <FiCheck aria-hidden="true" />
-              {content.experienceStrip.publicSector}
-            </span>
-            <span>
-              <FiCheck aria-hidden="true" />
-              {content.experienceStrip.aerospace}
-            </span>
-            <span>
-              <FiCheck aria-hidden="true" />
-              {content.experienceStrip.vendors}
-            </span>
-          </div>
-        </div>
 
         <section className="section container risk-section" id="decisions">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">{content.businessCase.eyebrow}</p>
-              <h2>
-                {content.businessCase.title}
-                <br />
-                {content.businessCase.titleSecondLine}
-              </h2>
+              <p className="eyebrow">{content.pains.eyebrow}</p>
+              <h2>{content.pains.title}</h2>
             </div>
-            <p>{content.businessCase.description}</p>
+            <p>{content.pains.description}</p>
           </div>
-          <div className="risk-grid">
-            <article>
-              <span className="eyebrow">
-                {content.businessCase.investment.eyebrow}
-              </span>
-              <h3>{content.businessCase.investment.title}</h3>
-              <p>{content.businessCase.investment.description}</p>
-              <strong>{content.businessCase.investment.outcome}</strong>
-            </article>
-            <article>
-              <span className="eyebrow">
-                {content.businessCase.focus.eyebrow}
-              </span>
-              <h3>{content.businessCase.focus.title}</h3>
-              <p>{content.businessCase.focus.description}</p>
-              <strong>{content.businessCase.focus.outcome}</strong>
-            </article>
-            <article>
-              <span className="eyebrow">
-                {content.businessCase.continuity.eyebrow}
-              </span>
-              <h3>{content.businessCase.continuity.title}</h3>
-              <p>{content.businessCase.continuity.description}</p>
-              <strong>{content.businessCase.continuity.outcome}</strong>
-            </article>
+          <div className="pain-grid">
+            {content.pains.items.map((item) => (
+              <article key={item.pain}>
+                <h3>{item.pain}</h3>
+                <p>{item.impact}</p>
+                <div className="pain-solution">
+                  <span className="eyebrow">HOW WE HELP</span>
+                  <p>{item.solution}</p>
+                </div>
+                <strong>{item.outcome}</strong>
+              </article>
+            ))}
           </div>
-          <p className="risk-takeaway">{content.businessCase.takeaway}</p>
         </section>
 
         <section className="pilot-section" id="infrastructure">
           <div className="container pilot-layout">
             <div className="pilot-copy">
-              <p className="eyebrow">{content.services.procurement.eyebrow}</p>
+              <p className="eyebrow">{content.review.eyebrow}</p>
               <h2>
-                {content.services.procurement.title}
+                {content.review.title}
                 <br />
-                <em>{content.services.procurement.titleEmphasis}</em>
+                <em>{content.review.titleEmphasis}</em>
               </h2>
-              <p>{content.services.procurement.description}</p>
-              <div className="pilot-principle">
-                <FiCheckCircle aria-hidden="true" />
-                <div>
-                  <strong>
-                    {content.services.procurement.principle.title}
-                  </strong>
-                  <p>{content.services.procurement.principle.description}</p>
-                </div>
-              </div>
+              <p>{content.review.description}</p>
+              <Link
+                className="text-link review-example"
+                href="/sample-deliverable/"
+              >
+                {content.review.sampleAction}
+              </Link>
             </div>
             <article className="offer-card infrastructure-offer">
-              <div className="offer-topline">
-                <span className="eyebrow">
-                  {content.services.procurement.audience}
-                </span>
-                <span className="scope-badge">
-                  {content.services.procurement.scopeBadge}
-                </span>
-              </div>
-              <h3>{infrastructure.entryName}</h3>
-              <p className="assessment-intro">
-                {content.services.procurement.offerDescription}
-              </p>
+              <p className="eyebrow">{content.review.audience}</p>
+              <h3>{content.review.name}</h3>
               <ul className="deliverables">
-                {infrastructure.deliverables.map((item) => (
+                {content.review.deliverables.map((item) => (
                   <li key={item}>
-                    <FiCheck aria-hidden="true" />
+                    <CheckIcon aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="assessment-price">
-                {content.services.procurement.engagement}
-              </p>
-              <a
-                className="button button-red"
-                href="#contact"
-                onClick={() => selectInquiry('procurement')}
-              >
-                {content.services.procurement.action}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-              </a>
-              <p className="offer-footnote">
-                {content.services.procurement.nextSteps}
-              </p>
+              <p className="assessment-price">{content.review.outcome}</p>
+              <ReviewLink />
+              <p className="offer-footnote">{content.review.scope}</p>
             </article>
           </div>
         </section>
+
         <section className="section container" id="process">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">{content.services.inference.eyebrow}</p>
+              <p className="eyebrow">{content.delivery.eyebrow}</p>
               <h2>
-                {content.services.inference.title}
+                {content.delivery.title}
                 <br />
-                {content.services.inference.titleSecondLine}
+                {content.delivery.titleSecondLine}
               </h2>
             </div>
-            <p>{content.services.inference.description}</p>
+            <p>{content.delivery.description}</p>
           </div>
-          <div className="process-grid infrastructure-process">
-            {infrastructure.stages.map((stage, i) => (
+          <div className="process-grid">
+            {content.delivery.stages.map((stage, index) => (
               <article key={stage.title}>
-                <span className="step-number">0{i + 1}</span>
+                <span className="step-number">0{index + 1}</span>
                 <h3>{stage.title}</h3>
                 <p>{stage.description}</p>
-                <span className="step-detail">{stage.deliverable}</span>
+                <strong className="step-detail">{stage.deliverable}</strong>
               </article>
             ))}
           </div>
-          <p className="risk-takeaway">
-            {content.services.inference.successMeasures}
-          </p>
-          <div className="service-action">
-            <a
-              className="button button-red"
-              href="#contact"
-              onClick={() => selectInquiry('inference')}
-            >
-              {content.services.inference.action}{' '}
-              <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-            </a>
-          </div>
-          <div className="delivery-capabilities">
-            <article>
-              <p className="eyebrow">
-                {content.services.inference.models.eyebrow}
-              </p>
-              <h3>
-                {content.services.inference.models.title}
-                <br />
-                {content.services.inference.models.titleSecondLine}
-              </h3>
-              <p>{content.services.inference.models.description}</p>
-              <ul>
-                {content.services.inference.models.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-            <article>
-              <p className="eyebrow">
-                {content.services.inference.continuity.eyebrow}
-              </p>
-              <h3>
-                {content.services.inference.continuity.title}
-                <br />
-                {content.services.inference.continuity.titleSecondLine}
-              </h3>
-              <p>{content.services.inference.continuity.description}</p>
-              <ul>
-                {content.services.inference.continuity.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section className="section container" id="training">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">{content.services.training.eyebrow}</p>
-              <h2>
-                {content.services.training.title}
-                <br />
-                {content.services.training.titleSecondLine}
-              </h2>
-            </div>
-            <p>{content.services.training.description}</p>
-          </div>
-          <div className="delivery-capabilities">
-            <article>
-              <p className="eyebrow">
-                {content.services.training.technical.audience}
-              </p>
-              <h3>{content.services.training.technical.title}</h3>
-              <p>{content.services.training.technical.description}</p>
-              <ul>
-                {content.services.training.technical.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <a
-                className="text-link service-action"
-                href="#contact"
-                onClick={() => selectInquiry('technical-training')}
-              >
-                {content.services.training.technical.action}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-              </a>
-            </article>
-            <article id="sales-training">
-              <p className="eyebrow">
-                {content.services.training.sales.audience}
-              </p>
-              <h3>{content.services.training.sales.title}</h3>
-              <p>{content.services.training.sales.description}</p>
-              <ul>
-                {content.services.training.sales.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <a
-                className="text-link service-action"
-                href="#contact"
-                onClick={() => selectInquiry('sales-training')}
-              >
-                {content.services.training.sales.action}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-              </a>
-            </article>
-          </div>
-          <p className="risk-takeaway">{content.services.training.takeaway}</p>
-        </section>
-
-        <section className="about-section" id="about">
-          <div className="container about-layout">
-            <div>
-              <p className="eyebrow">{content.experience.eyebrow}</p>
-              <h2>
-                {content.experience.title}
-                <br />
-                {content.experience.titleSecondLine}
-              </h2>
-              <p>{content.experience.description}</p>
-              <p>{content.experience.delivery}</p>
-              <div className="performance-experience">
-                <p className="eyebrow">
-                  {content.experience.performance.eyebrow}
-                </p>
-                <h3>{content.experience.performance.title}</h3>
-                <p className="performance-result">
-                  <strong>{content.experience.performance.result}</strong>
-                  <span>{content.experience.performance.comparison}</span>
-                </p>
-                <p>{content.experience.performance.description}</p>
-                <span className="experience-note">
-                  {content.experience.performance.context}
-                </span>
-              </div>
-            </div>
-            <div className="experience-cards">
-              <article>
-                <span className="eyebrow">
-                  {content.experience.procurement.eyebrow}
-                </span>
-                <h3>{content.experience.procurement.title}</h3>
-                <p>{content.experience.procurement.description}</p>
-                <span className="experience-note">
-                  {content.experience.procurement.context}
-                </span>
-              </article>
-              <article>
-                <span className="eyebrow">
-                  {content.experience.aerospace.eyebrow}
-                </span>
-                <h3>{content.experience.aerospace.title}</h3>
-                <p>{content.experience.aerospace.description}</p>
-                <p>{content.experience.aerospace.context}</p>
-              </article>
-            </div>
+          <p className="risk-takeaway">{content.delivery.accountability}</p>
+          <div className="section-action">
+            <ReviewLink />
           </div>
         </section>
 
         <section className="section container faq-layout" id="faq">
           <div>
             <p className="eyebrow">{content.faq.eyebrow}</p>
-            <h2>
-              {content.faq.title}
-              <br />
-              {content.faq.titleSecondLine}
-            </h2>
-            <p>
-              {content.faq.contactPrompt}
-              <br />
-              <a
-                className="text-link"
-                href={`mailto:${infrastructure.email}`}
-                onClick={trackContact}
-              >
-                {content.faq.contactAction}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-              </a>
-            </p>
+            <h2>{content.faq.title}</h2>
           </div>
           <div className="faq-list">
-            {faqs.map((faq) => (
+            {content.faq.items.map((faq) => (
               <details key={faq.question}>
                 <summary>
                   {faq.question}
-                  <FiChevronDown aria-hidden="true" />
+                  <ChevronDownIcon aria-hidden="true" />
                 </summary>
                 <p>{faq.answer}</p>
               </details>
@@ -501,58 +257,38 @@ const App = () => {
               <p>{content.contact.description}</p>
             </div>
             <div className="contact-card">
-              <span className="eyebrow">{content.contact.call.eyebrow}</span>
-              <h3>
-                {content.contact.call.title}
-                <br />
-                {content.contact.call.titleSecondLine}
-              </h3>
+              <h3>{content.contact.callTitle}</h3>
               <ul>
-                {content.contact.call.points.map((point) => (
+                {content.contact.points.map((point) => (
                   <li key={point}>
-                    <FiCheck aria-hidden="true" />
+                    <CheckIcon aria-hidden="true" />
                     {point}
                   </li>
                 ))}
               </ul>
-              <label className="inquiry-label" htmlFor="inquiry-service">
-                {content.contact.inquiryLabel}
-              </label>
-              <select
-                className="inquiry-select"
-                id="inquiry-service"
-                value={inquiryId}
-                onChange={(event) => selectInquiry(event.target.value)}
-              >
-                {content.contact.inquiryOptions.map((option) => (
-                  <option key={option.id} value={option.id}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
               <a
                 className="button button-red"
                 href={contactHref}
-                onClick={trackContact}
+                onClick={() => trackContact('email-draft')}
               >
-                {content.contact.call.action}{' '}
-                <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
+                {content.contact.action}
+                <ArrowUpIcon className="diagonal-arrow" aria-hidden="true" />
               </a>
-              <p className="contact-note">{content.contact.call.note}</p>
+              <p className="contact-note">{content.contact.note}</p>
               <div className="contact-direct">
                 <a
                   className="contact-email"
-                  href={infrastructure.phoneHref}
-                  onClick={trackContact}
+                  href={content.contact.phoneHref}
+                  onClick={() => trackContact('phone')}
                 >
-                  {content.contact.phoneAction} {infrastructure.phone}
+                  {content.footer.phoneAction} {content.contact.phone}
                 </a>
                 <a
                   className="contact-email"
-                  href={`mailto:${infrastructure.email}`}
-                  onClick={trackContact}
+                  href={`mailto:${content.contact.email}`}
+                  onClick={() => trackContact('email')}
                 >
-                  {infrastructure.email}
+                  {content.contact.email}
                 </a>
               </div>
             </div>
@@ -564,11 +300,13 @@ const App = () => {
         <p>
           © {new Date().getFullYear()} {content.brand.legalName}
         </p>
-        <a href="#top">
-          {content.navigation.backToTop}{' '}
-          <FiArrowUpRight className="diagonal-arrow" aria-hidden="true" />
-        </a>
+        <a href="#top">{content.navigation.backToTop}</a>
       </footer>
+      {showMobileAction && !menuOpen && (
+        <div className="mobile-review-action">
+          <ReviewLink />
+        </div>
+      )}
     </div>
   );
 };

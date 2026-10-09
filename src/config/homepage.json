@@ -1,8 +1,8 @@
 {
   "metadata": {
     "site_name": "SonarWave Technologies",
-    "title": "SonarWave | GPU Procurement, Inference Optimization & Training",
-    "description": "GPU servers and AI workstations, procurement guidance, production inference and team training. Serve more users, evaluate new models and plan for service continuity.",
+    "title": "GPU Purchase Review & AI System Setup | SonarWave Technologies",
+    "description": "Review your GPU server or workstation purchase before you commit. SonarWave checks requirements and vendor quotes, then helps configure, test and hand over your on-premises AI system.",
     "site_url": "https://sonarwavetech.com",
     "og_image": "/assets/images/logo.png",
     "locale": "en"
@@ -14,299 +14,168 @@
   },
   "navigation": {
     "skip": "Skip to content",
-    "procurement": "GPU procurement",
-    "inference": "Production AI",
-    "training": "Team training",
-    "contact": "Let’s talk",
+    "review": "Purchase review",
+    "process": "System setup",
+    "faq": "Questions",
+    "contact": "Request a review call",
     "backToTop": "Back to top"
   },
   "hero": {
-    "eyebrow": "GPU SERVERS & WORKSTATIONS · PRODUCTION INFERENCE",
-    "title": "Get more useful AI",
-    "titleEmphasis": "from your GPU investment.",
-    "description": "Choose GPU servers and workstations that fit your AI workloads. Tune the inference software to serve more users. Equip your team to operate it with confidence. We connect the hardware, models and people so your investment delivers usable capacity.",
-    "primaryAction": "Discuss your AI project",
-    "secondaryAction": "Find the right service",
-    "note": "Buying hardware, improving a deployment or building team skills? Start with the decision you need to make.",
-    "outcomesHeading": "WHERE DO YOU NEED HELP?",
-    "outcomesFooter": "Each engagement starts with a defined problem, deliverables and success measures.",
-    "outcomes": [
-      {
-        "title": "We’re buying GPU hardware.",
-        "detail": "Procurement & system design: connect software requirements to a sound hardware decision.",
-        "href": "#infrastructure"
-      },
-      {
-        "title": "Our AI needs to perform better.",
-        "detail": "Production inference: improve capacity, model performance and service continuity.",
-        "href": "#process"
-      },
-      {
-        "title": "Our team needs practical skills.",
-        "detail": "Technical training: build the capability to buy, operate and improve AI systems.",
-        "href": "#training"
-      }
+    "eyebrow": "GPU SERVERS & WORKSTATIONS FOR ON-PREMISES AI",
+    "title": "Buy the right GPU system.",
+    "titleEmphasis": "Get it running.",
+    "description": "Before you sign a vendor quote, we check the hardware against the AI models and workloads you need. Then we can configure, test and hand over a system your team can use.",
+    "action": "Request a review call",
+    "secondaryAction": "See an example review",
+    "note": "For leaders planning an AI purchase—or trying to put an existing system to work.",
+    "offerEyebrow": "START WITH A CLEAR BUYING DECISION",
+    "offerTitle": "GPU Purchase Review",
+    "offerDescription": "Bring your quote or plans. Get a written recommendation before you commit.",
+    "offerPoints": [
+      "What fits your models and workloads",
+      "Gaps in the quote and setup requirements",
+      "What to validate before placing the order"
     ],
-    "partnerPrompt": "For GPU vendors & resellers:",
-    "partnerAction": "Equip your hardware sales team"
+    "offerNote": "Review first. Deployment and handover can follow."
   },
-  "experienceStrip": {
-    "eyebrow": "PRIOR PROFESSIONAL EXPERIENCE",
-    "publicSector": "Government & public-sector systems",
-    "aerospace": "Aerospace & technical programs",
-    "vendors": "OEMs, resellers & custom builders"
-  },
-  "businessCase": {
-    "eyebrow": "THE BUSINESS COST OF FALLING BEHIND",
-    "title": "AI software changes fast.",
-    "titleSecondLine": "Hardware decisions last.",
-    "description": "New models, inference backends and serving approaches keep changing what your GPUs can do. Keeping up is a specialist job alongside running a data center. A poor stack decision can turn a major hardware investment into low utilization, rework and another unplanned purchase. We bridge that gap between hardware, AI software and the people who depend on them.",
-    "investment": {
-      "eyebrow": "WASTED INVESTMENT",
-      "title": "Expensive GPUs. Too little useful AI.",
-      "description": "The wrong backend or serving design can leave GPUs underused while people wait for responses. Buying more hardware without finding the bottleneck can repeat the same expensive mistake.",
-      "outcome": "Measure useful capacity before increasing the GPU budget."
-    },
-    "focus": {
-      "eyebrow": "LOST FOCUS",
-      "title": "Your specialists become infrastructure troubleshooters.",
-      "description": "Chasing model releases, debugging compatibility and rebuilding deployments takes time away from your team’s domain expertise. Useful new models can stay out of reach while maintenance grows.",
-      "outcome": "Give your team a tested platform and the skills to use it."
-    },
-    "continuity": {
-      "eyebrow": "BUSINESS CONTINUITY",
-      "title": "An unavailable endpoint becomes a business interruption.",
-      "description": "If a provider has an outage or an overseas endpoint becomes inaccessible, dependent workflows can stop. An untested backup may lack the quality, capacity or data controls you need.",
-      "outcome": "Test the alternative before the primary service disappears."
-    },
-    "takeaway": "The outcome: more people using capable AI, less engineering time spent on avoidable rework, and a clear response when something changes."
-  },
-  "services": {
-    "procurement": {
-      "eyebrow": "01 / GPU PROCUREMENT & SYSTEM DESIGN",
-      "title": "Protect your",
-      "titleEmphasis": "GPU investment.",
-      "description": "Before you commit to GPU servers or workstations, connect the purchase to the models and software your team needs. We review workload, inference-engine and facility requirements so your buying decision accounts for compatibility, usable capacity and total cost.",
-      "principle": {
-        "title": "A purchase your business can put to work.",
-        "description": "Bring a planned GPU system or vendor quote. Your team gets clear tradeoffs, missing requirements and the validation needed to support a buying decision."
-      },
-      "audience": "FOR ORGANIZATIONS BUYING GPU SYSTEMS",
-      "scopeBadge": "AGREED SCOPE",
-      "offerDescription": "A documented recommendation for what to buy, why it fits, and what to validate before ordering.",
-      "engagement": "Your outcome: a buying decision backed by technical requirements.",
-      "action": "Review a GPU purchase",
-      "nextSteps": "GPU Procurement Fundamentals courses are available for buyers and hardware sales teams. Benchmarking, sourcing coordination and deployment are agreed in the project scope; hardware and software costs are separate.",
-      "name": "GPU Procurement & System Design",
-      "deliverables": [
-        "Workload, model and inference-engine requirements",
-        "Recommended GPU, memory, storage and network specifications",
-        "Power, cooling and installation readiness checks",
-        "Vendor quote comparison, support options and total cost",
-        "Compatibility risks, validation steps and acceptance criteria"
-      ]
-    },
-    "inference": {
-      "eyebrow": "02 / PRODUCTION INFERENCE ENGINEERING",
-      "title": "Put better AI",
-      "titleSecondLine": "in more people’s hands.",
-      "description": "Turn a promising AI deployment into a service people can depend on. We select and tune the inference engine for your models, GPUs and real user demand, then plan upgrades and recovery. Get more useful throughput from your investment while your specialists focus on their own work.",
-      "successMeasures": "Agree the baseline and targets before delivery: useful response quality, users served at once, cost per workload and recovery time. Implementation, handover and any ongoing support have a defined scope.",
-      "models": {
-        "eyebrow": "MODEL-SPECIFIC INFERENCE OPTIMIZATION",
-        "title": "The right engine",
-        "titleSecondLine": "for the model you run.",
-        "description": "A model that runs is not necessarily a model that runs efficiently. Different architectures can need specialized engine support, optimized GPU kernels and serving configurations. We benchmark the options and tune the model–engine–GPU combination for higher throughput within your quality and latency targets, then reassess as models and engines change.",
-        "points": [
-          "Model architecture, engine version and GPU compatibility assessment",
-          "Supported kernel, precision, batching, caching and parallelism optimizations",
-          "Throughput, response-time and quality comparisons under realistic load",
-          "Tested engine upgrades, staged rollout and rollback"
-        ]
-      },
-      "continuity": {
-        "eyebrow": "A PLAN B FOR YOUR AI SERVICES",
-        "title": "Keep essential workflows",
-        "titleSecondLine": "prepared for disruption.",
-        "description": "Plan for provider outages, access restrictions and failed upgrades. We assess alternative providers or locally hosted models and test how critical workflows switch over, including the capacity and functionality available during recovery.",
-        "points": [
-          "External dependency and data-handling review",
-          "Fallback model or provider validation and failover testing",
-          "Recovery targets, operating procedures and staff handover"
-        ]
-      },
-      "stages": [
-        {
-          "title": "Match the engine to the model.",
-          "description": "Model architectures and inference engines evolve together. Compare supported engines and versions for your models and GPUs, including specialized optimizations, quality, licensing, latency and throughput.",
-          "deliverable": "Benchmarked model–engine–GPU recommendation"
-        },
-        {
-          "title": "Make capacity usable.",
-          "description": "Tune precision, batching, caching and parallelism where the model and engine support them. Load-test realistic requests and concurrent users to improve throughput within your quality, response-time and memory requirements.",
-          "deliverable": "Load-test results, serving configuration and capacity plan"
-        },
-        {
-          "title": "Roll out with a recovery path.",
-          "description": "Validate model and software updates before release. Plan staged rollouts, health checks and rollback, and test fallback options for a failed model service or an unavailable external provider.",
-          "deliverable": "Release, rollback and continuity procedures"
-        },
-        {
-          "title": "Equip your team to operate.",
-          "description": "Establish monitoring, access controls, vulnerability checks and operating procedures. Train your staff to recognize capacity limits, handle incidents and assess the next model or backend change.",
-          "deliverable": "Operational handover, staff training and agreed support scope"
-        }
-      ],
-      "action": "Improve an AI deployment"
-    },
-    "training": {
-      "eyebrow": "03 / TEAM TRAINING & SALES ENABLEMENT",
-      "title": "Make the investment",
-      "titleSecondLine": "work through your people.",
-      "description": "Reduce dependence on a few specialists and help staff put AI to productive use. Our courses and practical sessions build technical confidence, while sales enablement helps customer-facing teams identify relevant upgrades and additional services. The outcome is stronger internal capability and better-informed sales conversations.",
-      "technical": {
-        "audience": "DATA-CENTER, IT & TECHNICAL STAFF",
-        "title": "Turn specialist knowledge into everyday capability.",
-        "description": "Close the gap between maintaining GPU hardware and running AI models well. Build the skills to assess software changes, recognize bottlenecks and follow release and recovery procedures.",
-        "points": [
-          "GPU procurement, model–engine compatibility and serving fundamentals",
-          "Practical capacity, deployment and incident scenarios",
-          "Training scoped to your team’s roles and current knowledge"
-        ],
-        "action": "Plan technical training"
-      },
-      "sales": {
-        "audience": "FOR GPU VENDORS, RESELLERS & HARDWARE SALES TEAMS",
-        "title": "Sell hardware that supports the customer’s AI roadmap.",
-        "description": "Help hardware salespeople translate a client’s business needs into software and hardware requirements. Explain how a GPU purchase affects the models and inference engines the client can run, their usable capacity and future upgrades. Build a recommendation around the customer’s workload and growth plans.",
-        "points": [
-          "Translate business use cases into model and inference-engine requirements",
-          "Explain how GPU architecture, memory and networking shape software choices",
-          "Qualify capacity needs and identify compatibility risks before quoting",
-          "Recommend relevant hardware, deployment, training and support upgrades"
-        ],
-        "action": "Plan hardware sales training"
-      },
-      "takeaway": "Technical confidence for staff. Better recommendations for customers. Training content and learning goals are agreed for each engagement."
-    },
-    "name": "GPU Procurement, Production Inference & Team Training"
-  },
-  "experience": {
-    "eyebrow": "04 / EXPERIENCE & DELIVERY",
-    "title": "Technical depth.",
-    "titleSecondLine": "Accountable delivery.",
-    "description": "SonarWave Technologies Inc. specializes in production inference and the GPU systems behind it. We connect hardware procurement, AI software engineering and staff capability so your organization can put models to work in its own field.",
-    "delivery": "Engagements are organized around deliverables: validated specifications, vendor comparisons, tested deployments and documented handover. Responsibilities, milestones and changes are agreed as part of the project.",
-    "performance": {
-      "eyebrow": "AI INFERENCE PERFORMANCE",
-      "title": "Get more from the infrastructure you have.",
-      "result": "200×",
-      "comparison": "the throughput of the previous setup",
-      "description": "In one implementation, inference optimization achieved 200× the throughput of the previous setup. We use measured performance to guide decisions about optimization and additional capacity.",
-      "context": "Result from one implementation. Performance varies with workload, hardware and configuration."
-    },
-    "procurement": {
-      "eyebrow": "MISSION-CRITICAL ENVIRONMENTS",
-      "title": "Leadership in procurement and AI engineering.",
-      "description": "Our experience includes leading major hardware procurements and AI engineering projects in government and aerospace, drafting technical requirements and procurement proposals, and coordinating with resellers on government procurement lists.",
-      "context": "Sector experience includes work undertaken in prior professional roles."
-    },
-    "aerospace": {
-      "eyebrow": "AEROSPACE AI INFRASTRUCTURE",
-      "title": "Trusted with AI infrastructure decisions.",
-      "description": "In prior professional roles, our leadership was entrusted by major aerospace organizations to assess, benchmark and procure AI infrastructure.",
-      "context": "This experience includes working alongside government data-centre professionals to translate AI software and workload needs into hardware specifications and infrastructure requirements."
-    }
-  },
-  "faq": {
-    "eyebrow": "THE PRACTICAL DETAILS",
-    "title": "Before we",
-    "titleSecondLine": "get started.",
-    "contactPrompt": "Have a different question?",
-    "contactAction": "Contact SonarWave",
+  "pains": {
+    "eyebrow": "THE PROBLEM → THE SOLUTION",
+    "title": "Avoid an expensive purchase that does not do the job.",
+    "description": "AI software changes quickly. Your hardware has to support the work you actually need to do.",
     "items": [
       {
-        "question": "Who is this for, and when should we start?",
-        "answer": "For leaders responsible for AI investment, operational continuity and workforce capability, along with the data-center, procurement, engineering and sales teams delivering those goals. Start before a GPU purchase, when a deployment struggles with demand, or when model upgrades and external dependencies create business risk."
+        "pain": "“Is this GPU quote right for us?”",
+        "impact": "Too much hardware wastes budget. Too little—or the wrong configuration—limits what you can run.",
+        "solution": "We check the quote against your models, expected users and facility requirements.",
+        "outcome": "A written recommendation you can take to leadership."
       },
       {
-        "question": "Is this advice only, or do you help deliver the outcome?",
-        "answer": "We provide procurement guidance and courses, and we also scope hands-on system design, hardware sourcing, production inference implementation, testing and staff handover. Any ongoing support is agreed separately. We define the baseline, deliverables and success measures together so the engagement is tied to an operating result."
+        "pain": "“Our data needs to stay in-house.”",
+        "impact": "A cloud service may not fit your data requirements. A local system still needs the right capacity and access controls.",
+        "solution": "We specify an on-premises system and review how data, models and external services will be handled.",
+        "outcome": "A buying and setup plan built around your data requirements."
       },
       {
-        "question": "How will we know the investment is working?",
-        "answer": "We agree measures suited to the goal before work starts. For production inference, these can include task quality, concurrent users, response times, GPU utilization, cost per workload and recovery time. For training, we agree role-specific learning goals and practical demonstrations. Results are assessed against your starting point and the agreed scope."
+        "pain": "“Who will get the system working?”",
+        "impact": "GPU hardware can sit idle while your team works through software, access and deployment problems.",
+        "solution": "We configure the AI software, test agreed workloads, and document the setup for your team.",
+        "outcome": "A tested system and a practical handover."
+      }
+    ]
+  },
+  "review": {
+    "eyebrow": "THE FIRST ENGAGEMENT",
+    "title": "Before you sign the quote,",
+    "titleEmphasis": "know what you are buying.",
+    "description": "The GPU Purchase Review connects your business needs to a hardware decision. Start with the review alone; choose deployment as a separate next step.",
+    "name": "GPU Purchase Review",
+    "audience": "FOR GPU BUYERS & TECHNICAL LEADERS",
+    "deliverables": [
+      "Workload requirements and recommended specifications",
+      "Vendor quote review, with gaps and risks identified",
+      "Power, cooling, networking and installation requirements",
+      "Validation steps to confirm the system meets your needs"
+    ],
+    "outcome": "Your deliverable: a written recommendation with the reasons behind it.",
+    "scope": "Scope, fee and delivery schedule are agreed before work starts. Hardware, software and deployment costs are separate.",
+    "sampleAction": "See an example review"
+  },
+  "delivery": {
+    "eyebrow": "FROM PURCHASE TO A WORKING SYSTEM",
+    "title": "We help make the decision.",
+    "titleSecondLine": "Then help put it to work.",
+    "description": "Procurement and hands-on AI setup in one engagement path. You can start before a purchase or with hardware you already own.",
+    "stages": [
+      {
+        "title": "Review & specify",
+        "description": "Define the workloads. Check GPU memory, software compatibility, facility needs and vendor quotes.",
+        "deliverable": "Written purchase recommendation"
       },
       {
-        "question": "Do you help source GPU servers and AI workstations?",
-        "answer": "Yes. We help specify and source GPU workstations for AI development and GPU servers for training and inference through OEMs, resellers and specialist builders. System design, benchmarking, sourcing and deployment are scoped to the project. Availability and delivery timelines are confirmed with vendors."
+        "title": "Source & configure",
+        "description": "Support sourcing, then set up the operating system, networking, secure access, inference software and models.",
+        "deliverable": "Configured AI system"
       },
       {
-        "question": "Can you improve an existing AI deployment?",
-        "answer": "We can assess an existing deployment before you commit to more hardware. We establish a performance baseline and identify opportunities to improve capacity. Changes are tested against throughput and response-time targets so you can decide whether to optimize, reconfigure or expand. The workload, measurements and scope are agreed before work begins."
+        "title": "Test & hand over",
+        "description": "Test agreed workloads and user demand. Document the setup and walk your team through operating it.",
+        "deliverable": "Test results, documentation and handover"
+      }
+    ],
+    "accountability": "Agree what success looks like before delivery: the workloads to run, the users to support and the checks the system must pass."
+  },
+  "faq": {
+    "eyebrow": "BEFORE WE START",
+    "title": "Straight answers.",
+    "items": [
+      {
+        "question": "Can we start with just a quote review?",
+        "answer": "Yes. The purchase review is a separate engagement. You receive the recommendation and decide whether you want help with sourcing, setup or handover."
       },
       {
-        "question": "Do you train technical staff and customer-facing sales teams?",
-        "answer": "Yes. We offer courses and practical training for data-center staff, buyers, technical teams and hardware salespeople. Sales teams learn to connect a client’s business goals to model, inference-engine and hardware requirements, explain how procurement affects the software stack, and identify useful capacity or service upgrades. Technical training covers operating, optimizing and updating the serving environment."
+        "question": "We already own GPUs. Can you help?",
+        "answer": "Yes. We can review your existing hardware and planned workloads, identify setup or compatibility gaps, and scope configuration and testing."
       },
       {
-        "question": "How do you scope and price the work?",
-        "answer": "After the initial conversation, we define the deliverables, responsibilities, acceptance measures and fee in a proposal. Procurement advice, implementation, training and any ongoing support have clear scopes. Hardware purchases, software licences and cloud usage are separate, with costs agreed before work begins."
+        "question": "Why involve SonarWave alongside our IT team or vendor?",
+        "answer": "Your team knows the business; your vendor knows its products. We connect your workload requirements to the proposed hardware and the AI software it needs to run, then help with setup and testing."
+      },
+      {
+        "question": "How are pricing and hardware sourcing handled?",
+        "answer": "We agree the service scope, fee and schedule before work starts. Hardware, licences and cloud usage are separate. If sourcing is included, the proposal sets out the purchasing responsibilities and costs."
+      },
+      {
+        "question": "Does on-premises AI keep all our data local?",
+        "answer": "That depends on the full setup. External APIs, telemetry, model downloads and access controls need to be reviewed. We plan the deployment around your data requirements; running a model locally does not by itself guarantee privacy or compliance."
       }
     ]
   },
   "contact": {
-    "eyebrow": "START WITH THE OUTCOME YOU NEED",
-    "title": "Bring us your",
-    "titleEmphasis": "AI infrastructure challenge.",
-    "description": "Tell us what you are buying, what is limiting your deployment, or what your team needs to learn. We will use the first conversation to identify the priorities and the right engagement.",
-    "call": {
-      "eyebrow": "YOUR FIRST STEP",
-      "title": "A focused 20-minute call.",
-      "titleSecondLine": "A clear next step.",
-      "points": [
-        "Identify the business goal and the decision ahead",
-        "Discuss your current setup, constraints and timeline",
-        "Agree whether procurement, implementation or training fits"
-      ],
-      "action": "Email us to arrange a call",
-      "note": "Opens your email app with prompts for the selected service. Add what you know and send it to SonarWave. Project scope, fee and schedule follow separately."
-    },
-    "phoneAction": "Call",
-    "emailSubject": "SonarWave project inquiry",
+    "eyebrow": "YOUR NEXT STEP",
+    "title": "Bring your quote.",
+    "titleEmphasis": "Or bring your questions.",
+    "description": "Use a 20-minute conversation to explain what you want to run, where the project stands and whether a GPU Purchase Review is the right next step.",
+    "callTitle": "A clear decision about what comes next.",
+    "points": [
+      "Discuss your workloads and buying timeline",
+      "Identify the decision or setup problem",
+      "Confirm the scope needed for a proposal"
+    ],
+    "action": "Request a review call",
+    "note": "Opens an email draft. Add your project details and send it to arrange a time.",
     "email": "info@sonarwave.org",
     "phone": "+1 (647) 667-3518",
     "phoneHref": "tel:+16476673518",
-    "inquiryLabel": "What would you like help with?",
-    "defaultInquiry": "unsure",
-    "emailGreeting": "Hello SonarWave,",
-    "emailClosing": "Please suggest a time for a 20-minute call.\n\nThanks!",
-    "inquiryOptions": [
+    "emailSubject": "GPU Purchase Review call",
+    "emailBody": "Hello SonarWave,\n\nI would like to arrange a 20-minute call.\n\nWhat we want to run:\nOur quote or existing hardware:\nThe decision or setup problem:\nOur timeline:\n\nPlease suggest a time to talk.\n\nThanks!"
+  },
+  "footer": {
+    "phoneAction": "Call",
+    "sampleAction": "Example review"
+  },
+  "sample": {
+    "eyebrow": "ILLUSTRATIVE DELIVERABLE",
+    "title": "What a GPU Purchase Review covers.",
+    "description": "This is an example of the review format, not a client report or a hardware recommendation. Your review is based on your workloads, quotes and agreed scope.",
+    "scenario": "Example brief: a team wants a local AI assistant for internal documents and is comparing GPU server quotes.",
+    "sections": [
       {
-        "id": "unsure",
-        "label": "Help me choose the right service",
-        "prompt": "The business goal or problem:\nOur current setup:\nOur timeline:"
+        "title": "1. Requirements",
+        "description": "Record the models, user demand, response-time needs, data restrictions and budget. Identify missing information before choosing hardware."
       },
       {
-        "id": "procurement",
-        "label": "GPU procurement & system design",
-        "prompt": "What we plan to run:\nProposed GPU system or vendor quote, if available:\nBudget range and purchasing timeline:"
+        "title": "2. Quote assessment",
+        "description": "Compare each quote with the requirements. Note GPU memory, software support, storage, networking, warranty and any assumptions the vendor needs to confirm."
       },
       {
-        "id": "inference",
-        "label": "Production inference & optimization",
-        "prompt": "Current models, inference engine and GPUs:\nThe performance or reliability problem:\nTarget users, response times and timeline:"
+        "title": "3. Installation readiness",
+        "description": "Check power, cooling, rack or workstation space, network access and who owns installation and system access."
       },
       {
-        "id": "technical-training",
-        "label": "Technical team training",
-        "prompt": "Team roles and current experience:\nSkills we want to build:\nApproximate group size and timing:"
-      },
-      {
-        "id": "sales-training",
-        "label": "Hardware sales training",
-        "prompt": "Our customers and the GPU systems we sell:\nSoftware or procurement questions our team needs to answer:\nApproximate group size and timing:"
+        "title": "4. Recommendation & validation",
+        "description": "Explain the recommended direction, unresolved risks and checks to complete before ordering. Define what the system must demonstrate during acceptance testing."
       }
-    ]
+    ],
+    "closing": "The outcome is a decision record: what to buy, why it fits, and what still needs to be checked."
   }
 }
