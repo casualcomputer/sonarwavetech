@@ -33,3 +33,5 @@ Verify changes with `npm run build`, inspect desktop and mobile, and check both 
 `DESIGN.md` documents the visual direction and illustration provenance. `src/styles/main.css` contains the responsive design tokens and styling; `src/components/ReviewPreview.tsx` uses accessible Radix tabs. `src/components/ProjectInquiry.tsx` manages stage selection, the email draft and copy fallback. These components contain short interface labels alongside the JSON marketing content.
 
 The form prepares an email; it does not submit data to a backend. Keep that distinction clear if editing its actions. The current hero is a conceptual hardware illustration, not a vendor product or client installation. The design QA evidence is in `design-qa.md`.
+
+Keep cloud-provider names and proprietary implementation details out of public copy. Describe pre-purchase validation and buyer outcomes at a high level; experience shared in conversation is not permission to disclose the providers or tools used.

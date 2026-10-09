@@ -64,7 +64,7 @@
     "eyebrow": "START WITH A GPU PURCHASE REVIEW",
     "title": "A confident decision.",
     "titleEmphasis": "Before you commit.",
-    "description": "Start with a focused review of your GPU purchase. Where performance needs validating, we can scope inference tests on Runpod or other cloud providers to inform hardware sizing before you commit.",
+    "description": "Start with a focused review of your GPU purchase. Where performance needs validating, we can scope inference tests using cloud GPUs to inform hardware sizing before you commit.",
     "name": "GPU Purchase Review",
     "audience": "FOR GPU BUYERS & TECHNICAL LEADERS",
     "deliverables": [
@@ -178,7 +178,7 @@
       },
       {
         "question": "Can we test performance before buying hardware?",
-        "answer": "Yes. We can scope inference tests on Runpod or other cloud providers to compare throughput, response times and running costs for agreed workloads. We agree the test environment and budget upfront. Results inform the purchase recommendation; differences in hardware and configuration still need validation on the proposed system."
+        "answer": "Yes. We can scope inference tests using cloud GPUs to compare throughput, response times and running costs for agreed workloads. We agree the test environment and budget upfront. Results inform the purchase recommendation; differences in hardware and configuration still need validation on the proposed system."
       },
       {
         "question": "We already own GPUs. Can you help?",
@@ -270,7 +270,7 @@
   "experience": {
     "eyebrow": "WHY SONARWAVE",
     "title": "Procurement advice grounded in AI development experience.",
-    "description": "Our founder brings procurement and GenAI development experience, plus hands-on inference testing on Runpod and other cloud providers. That connects buying decisions to measured workload performance.",
+    "description": "Our founder brings procurement and GenAI development experience, plus hands-on inference testing. That connects buying decisions to measured workload performance.",
     "items": [
       {
         "title": "Aerospace data-center procurement",

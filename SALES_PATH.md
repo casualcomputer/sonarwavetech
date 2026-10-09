@@ -35,4 +35,6 @@ SonarWave advises on hardware purchases and can coordinate multiple vendors and 
 
 ## Pre-purchase inference validation
 
-The founder also supplied personal experience testing inference on Runpod and other cloud providers. Cloud benchmarking is an optional, separately scoped part of the purchase decision: agree workload, environment and budget; record throughput, response time and running cost; document what remains to validate on the proposed hardware. Do not publish invented benchmark results or imply cloud results guarantee identical on-premises performance. The web example and downloadable file describe the methodology without numerical results.
+The founder also supplied personal experience testing inference on cloud infrastructure. Cloud benchmarking is an optional, separately scoped part of the purchase decision: agree workload, environment and budget; record throughput, response time and running cost; document what remains to validate on the proposed hardware. Do not publish invented benchmark results or imply cloud results guarantee identical on-premises performance. The web example and downloadable file describe the methodology without numerical results.
+
+Keep public positioning focused on buyer outcomes and high-level validation. Provider names, sourcing channels and proprietary testing or tuning methods are private unless the user explicitly approves disclosure.
