@@ -14,7 +14,10 @@ Compare each quote with the requirements. Note GPU memory, software support, sto
 3. Installation readiness
 Check power, cooling, rack or workstation space, network access and who owns installation and system access.
 
-4. Recommendation & validation
+4. Cloud validation, if scoped
+Record the tested GPU, model, inference engine, workload and configuration, alongside throughput, response times and running costs. Explain what the results mean for sizing and which differences still need validation on the proposed system.
+
+5. Recommendation & validation
 Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing.
 
 The outcome is a decision record: what to buy, why it fits, and what still needs to be checked.

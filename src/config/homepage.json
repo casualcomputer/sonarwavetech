@@ -43,13 +43,13 @@
       {
         "pain": "Will this quote deliver what we need?",
         "impact": "A GPU specification alone cannot tell you whether your models will fit or your users will get the performance they need.",
-        "solution": "We assess vendor quotes against your models, inference software, user demand and facility requirements.",
-        "outcome": "A purchase recommendation with gaps and validation steps made explicit."
+        "solution": "We assess vendor quotes against your workloads and can test inference on cloud GPUs before you commit to a large hardware purchase.",
+        "outcome": "A buying decision informed by workload evidence, with remaining risks made explicit."
       },
       {
         "pain": "Are we getting enough from our GPUs?",
         "impact": "A poorly matched inference engine or deployment design can leave expensive hardware underused and users waiting.",
-        "solution": "We select and tune the software that serves your models, then test it against agreed workloads and demand.",
+        "solution": "We select and tune the software that serves your models, then measure throughput and response times against agreed workloads. Testing can start on cloud GPUs before purchase and continue on your deployed system.",
         "outcome": "Measured performance against your requirements, with clear next steps."
       },
       {
@@ -64,17 +64,18 @@
     "eyebrow": "START WITH A GPU PURCHASE REVIEW",
     "title": "A confident decision.",
     "titleEmphasis": "Before you commit.",
-    "description": "Start with a focused review of your GPU purchase. We connect business requirements to the hardware and inference software needed to meet them. Vendor coordination, deployment and ongoing help can follow under separate scopes.",
+    "description": "Start with a focused review of your GPU purchase. Where performance needs validating, we can scope inference tests on Runpod or other cloud providers to inform hardware sizing before you commit.",
     "name": "GPU Purchase Review",
     "audience": "FOR GPU BUYERS & TECHNICAL LEADERS",
     "deliverables": [
       "Workload, model and inference-software requirements",
       "Recommended specifications and vendor quote gaps",
       "Power, cooling, networking and installation requirements",
+      "Optional cloud benchmarks to inform hardware sizing",
       "Performance and compatibility checks before you commit"
     ],
     "outcome": "Your deliverable: a written recommendation with the reasons behind it.",
-    "scope": "Scope, fee and delivery schedule are agreed before work starts. Hardware, software and deployment costs are separate.",
+    "scope": "Scope, fee and delivery schedule are agreed before work starts. Cloud testing is scoped and budgeted separately; hardware, software and deployment costs are separate.",
     "sampleAction": "See an example review",
     "preview": [
       {
@@ -128,7 +129,7 @@
           },
           {
             "label": "Validate",
-            "value": "Checks to complete before placing the order"
+            "value": "Optional cloud benchmarks and target-system checks"
           },
           {
             "label": "Plan",
@@ -174,6 +175,10 @@
       {
         "question": "Can we start with just a quote review?",
         "answer": "Yes. The GPU Purchase Review is a separate engagement. You receive a written recommendation and decide whether you want vendor coordination, deployment or ongoing help."
+      },
+      {
+        "question": "Can we test performance before buying hardware?",
+        "answer": "Yes. We can scope inference tests on Runpod or other cloud providers to compare throughput, response times and running costs for agreed workloads. We agree the test environment and budget upfront. Results inform the purchase recommendation; differences in hardware and configuration still need validation on the proposed system."
       },
       {
         "question": "We already own GPUs. Can you help?",
@@ -247,7 +252,11 @@
         "description": "Check power, cooling, rack or workstation space, network access and who owns installation and system access."
       },
       {
-        "title": "4. Recommendation & validation",
+        "title": "4. Cloud validation, if scoped",
+        "description": "Record the tested GPU, model, inference engine, workload and configuration, alongside throughput, response times and running costs. Explain what the results mean for sizing and which differences still need validation on the proposed system."
+      },
+      {
+        "title": "5. Recommendation & validation",
         "description": "Explain the recommended direction, unresolved risks and compatibility and performance checks to complete before ordering. Define what the system must demonstrate during acceptance testing."
       }
     ],
@@ -261,7 +270,7 @@
   "experience": {
     "eyebrow": "WHY SONARWAVE",
     "title": "Procurement advice grounded in AI development experience.",
-    "description": "Our founder’s experience spans buying infrastructure and developing the AI products it needs to support. That perspective connects the purchase decision to the work your system must do.",
+    "description": "Our founder brings procurement and GenAI development experience, plus hands-on inference testing on Runpod and other cloud providers. That connects buying decisions to measured workload performance.",
     "items": [
       {
         "title": "Aerospace data-center procurement",
