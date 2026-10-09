@@ -222,6 +222,35 @@ const App = () => {
           </div>
         </section>
 
+        <section
+          className="experience-section"
+          id="why-sonarwave"
+          aria-labelledby="experience-title"
+        >
+          <div className="section container">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">{content.experience.eyebrow}</p>
+                <h2 id="experience-title">{content.experience.title}</h2>
+              </div>
+              <p>{content.experience.description}</p>
+            </div>
+            <div className="process-grid experience-grid">
+              {content.experience.items.map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.experience}</p>
+                  <div className="experience-relevance">
+                    <span>WHAT THIS MEANS FOR YOU</span>
+                    <p>{item.relevance}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="experience-note">{content.experience.note}</p>
+          </div>
+        </section>
+
         <section className="review-section" id="infrastructure">
           <div className="container review-layout">
             <div className="review-copy">

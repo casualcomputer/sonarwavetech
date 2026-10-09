@@ -4,9 +4,9 @@ Branch: `simplified-sales-messaging`. Based on the supplied October 9, 2026 CEO/
 
 ## What changed and why
 
-- One lead offer, **GPU Purchase Review**, makes the first buying decision clear. System setup and handover remain visible as the next stages.
+- One lead offer, **GPU Purchase Review**, makes the first buying decision clear. Deployment, optimization and ongoing improvement remain visible as the next stages.
 - The hero names GPU servers/workstations and on-premises AI, then states the outcome: **Buy the right GPU system. Put AI to work.**
-- Three open rows place the pain, business consequence, solution and deliverable together: quote uncertainty, data requirements and hardware that needs setup.
+- Three open rows place the pain, business consequence, solution and deliverable together: quote uncertainty, underused hardware and changing software needs.
 - Removed standalone training/sales-enablement sections, repeated technical detail and the 200× result from this alternative. Those services remain on main; this branch focuses the homepage on one buyer journey.
 - Kept commercial boundaries and specific deliverables. Added an explicitly illustrative review-format page so the secondary action leads to something useful.
 - Repeated one honest call request and added a mobile action that appears after the hero and hides at contact.
@@ -16,7 +16,7 @@ Branch: `simplified-sales-messaging`. Based on the supplied October 9, 2026 CEO/
 
 These facts are omitted from public copy rather than replaced with invented values:
 
-- Founder name, photo, attributable credential and permitted public experience references.
+- Founder name, photo and public links supporting the supplied personal experience. The founder has now supplied procurement and GenAI development experience for the public copy.
 - A real anonymized recommendation or documented case study, with permission to publish.
 - Fee/range and review/deployment timelines you will commit to.
 - How hardware sourcing is paid for, including any supplier relationships or commissions. No vendor-independence claim is made.
@@ -34,4 +34,8 @@ This is a separate homepage option, not a launch of every proposed page in the b
 
 The redesigned alternative adds a locally hosted DM Sans type system, proportional mobile headings, a conceptual GPU server/workstation hero image, an interactive sample review and a project-stage inquiry composer. Radix provides keyboard-accessible tabs; Lucide provides consistent icons. The paper, navy and red brand palette remains. Motion respects reduced-motion preferences. The example has download and print actions.
 
-The provided LinkedIn feed URL does not identify a founder, so no biography or identity claim has been added. Trust currently comes from explicit scope, visible deliverables, accurate action labels and contact details. Real client proof remains a future content input. See `design-qa.md` for verification.
+The provided LinkedIn feed URL does not identify a founder, so no name or profile link has been added. A subsequent positioning update now includes the founder’s supplied experience, clearly attributed personally. Trust currently comes from explicit scope, visible deliverables, accurate action labels and contact details. Real client proof remains a future content input. See `design-qa.md` for verification.
+
+## Positioning update
+
+Purchase advice is now explicit, with optional coordination across vendors and resellers for OEM delivery and installation. The service path includes deployment optimization and help as software needs evolve. A new “Why SonarWave” section connects the founder’s personal aerospace data-center procurement, government AI procurement and GenAI development experience to client decisions. The claim that a chatbot was “the first” is omitted because the exact public project reference and scope have not been established. Public Service Data Challenge participation is a possible future biography detail; the homepage leads with directly relevant procurement and development experience.

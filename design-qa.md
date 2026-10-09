@@ -49,3 +49,11 @@ These intentional changes are the approved implementation direction from the des
 ## Practical limits
 
 Chromium emulation was used; physical iOS/Safari and assistive-technology user testing were not performed. Email sending depends on the visitor's email application; no backend lead submission or calendar booking is configured. Conversion uplift is unmeasured. A public founder profile, publishable customer proof and final canonical-domain choice remain business inputs documented in `SIMPLIFIED_MESSAGING.md`.
+
+## Positioning follow-up — October 9, 2026
+
+Final result: **passed** for the updated copy and founder-experience section. The existing design is retained. The hero now states purchase advice and ongoing improvements; the new founder section pairs personally attributed experience with buyer relevance. Vendor coordination and post-deployment scope are explicit. No “first chatbot,” company-client relationship, vendor-independence or uptime claim was added.
+
+Updated evidence: `/workspace/shared/sonarwave-positioning/`. `desktop.png`, `mobile.png` and their `-full` versions capture the revised page. `why-1440.png` and `why-390.png` show the founder section; the mobile detail uses a 390 × 1700 viewport to fit the section without sticky navigation obscuring its content. The final screenshots were inspected for wrapping, spacing and legibility. `checks.json` and `accessibility.json` contain the latest measurements and automated scan results.
+
+Production build and targeted ESLint passed. The full sales-journey check passed at widths 320, 375, 390, 430, 768, 834, 1024 and 1440: no horizontal overflow, no console errors or failed requests, working navigation, tabs, inquiry composition, clipboard fallback, FAQ, download, print, reduced-motion and no-JavaScript core content. The primary phone CTA ends between 468 and 514 pixels from the top. Final axe scans report zero violations on both routes at 390 and 1440 pixels. The browser and business-evidence limitations above still apply.

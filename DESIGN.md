@@ -10,7 +10,7 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 - Clear sans-serif display type, comfortable 16–18px body copy, 13–14px supporting text. Mobile heading sizes stay proportional to the viewport.
 - A real subject in the hero: GPU server and workstation, shown as a clearly labelled conceptual illustration.
 - Open layouts and dividers establish hierarchy. Reserve a paper treatment for the example deliverable and a contained surface for the inquiry form.
-- Repeated primary CTA: Request a review call. Secondary action: inspect the illustrative review.
+- Repeated primary CTA: Discuss your AI project. Secondary action: inspect the illustrative review.
 - Useful interactions: keyboard-accessible review tabs, FAQ disclosure, project-stage selection, editable inquiry and clipboard fallback. Motion is short and supports state; reduced-motion settings disable it.
 
 ## Composition
@@ -19,10 +19,11 @@ A premium engineering consultancy for executive and technical buyers of GPU syst
 2. Two-column hero: concrete buying promise and CTA beside hardware illustration. Phone layout puts the promise and action first.
 3. Three concise delivery commitments without unsupported client logos or metrics.
 4. Pain → solution rows connecting quote uncertainty, data constraints and deployment ownership to outcomes.
-5. Dark purchase-review section with scope and a paper-like, interactive example report.
-6. Three delivery stages: review, configure, hand over.
-7. FAQ and final project inquiry.
-8. Legal name, consistent contact details and useful footer links.
+5. Founder experience with explicit relevance to buying and deployment decisions.
+6. Dark purchase-review section with scope and a paper-like, interactive example report.
+7. Three service stages: advise and coordinate, deploy and optimize, support and evolve.
+8. FAQ and final project inquiry.
+9. Legal name, consistent contact details and useful footer links.
 
 ## Implementation choices
 

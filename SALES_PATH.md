@@ -1,17 +1,17 @@
 # Simplified sales path
 
-**Buyer:** an executive or technical leader planning a GPU server/workstation purchase, or trying to get existing hardware running.
+**Buyer:** an executive or technical leader planning a GPU server/workstation purchase, or improving an existing AI system as models, software and demand change.
 
 **Promise:** Buy the right GPU system. Put AI to work.
 
-**Entry offer:** GPU Purchase Review. The client receives a written workload-based recommendation, quote gaps/risks, facility requirements and validation steps. Deployment and handover are separate follow-on scopes.
+**Entry offer:** GPU Purchase Review. The client receives a written workload-based recommendation, quote gaps/risks, facility requirements and validation steps. Optional vendor coordination, deployment and ongoing help are separate follow-on scopes.
 
 ## Page journey
 
 1. Recognize the buying situation and the named entry offer in the hero.
 2. See each concern paired with how SonarWave helps and what the buyer receives.
 3. Inspect the review deliverables using the Workload, Quote and Next steps tabs, or open the downloadable, printable illustrative example.
-4. Understand the setup, workload testing and handover path.
+4. Understand purchase advice, optional vendor coordination, deployment and ongoing software improvement.
 5. Resolve scope, existing-hardware and data-handling questions.
 6. Choose a project stage, optionally describe the goal, and prepare an email requesting a 20-minute call. Phone is also available.
 
@@ -26,3 +26,9 @@ Establish the workloads, proposed hardware, budget, facility/data constraints an
 ## Evaluate this alternative
 
 Compare qualified inquiries per visit and inquiry-to-paid-review progression against a baseline for similar traffic. Track replies and booked calls in the inbox/CRM. Separate outbound sources with campaign tags where analytics is configured. This branch is a conversion hypothesis; it has not demonstrated a sales uplift.
+
+## Why SonarWave
+
+The differentiator is procurement advice informed by experience developing AI products. The founder has personally worked on aerospace data-center procurement, government AI procurement and GenAI development in aerospace and taxation, and contributed to a federal-government GenAI chatbot. These facts were supplied by the founder in this conversation; no independent verification or client endorsement is implied. The page attributes them to the founder and explains the relevance to workload fit, documented decisions and deployment.
+
+SonarWave advises on hardware purchases and can coordinate multiple vendors and resellers for OEM delivery and installation. The proposal must identify purchasing, installation and support responsibilities. No vendor-independence, authorized-reseller or commission-free claim is made. Ongoing help is available under an agreed scope; no 24/7 coverage or uptime guarantee is implied.
