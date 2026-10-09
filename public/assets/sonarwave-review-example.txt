@@ -1,0 +1,22 @@
+SONARWAVE TECHNOLOGIES
+ILLUSTRATIVE GPU PURCHASE REVIEW
+
+This is an example of the review format, not a client report or a hardware recommendation. Your review is based on your workloads, quotes and agreed scope.
+
+Example brief: a team wants a local AI assistant for internal documents and is comparing GPU server quotes.
+
+1. Requirements
+Record the models, user demand, response-time needs, data restrictions and budget. Identify missing information before choosing hardware.
+
+2. Quote assessment
+Compare each quote with the requirements. Note GPU memory, software support, storage, networking, warranty and any assumptions the vendor needs to confirm.
+
+3. Installation readiness
+Check power, cooling, rack or workstation space, network access and who owns installation and system access.
+
+4. Recommendation & validation
+Explain the recommended direction, unresolved risks and checks to complete before ordering. Define what the system must demonstrate during acceptance testing.
+
+The outcome is a decision record: what to buy, why it fits, and what still needs to be checked.
+
+Contact: info@sonarwave.org | +1 (647) 667-3518

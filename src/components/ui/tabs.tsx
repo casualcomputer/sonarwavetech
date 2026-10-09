@@ -1,0 +1,42 @@
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
+
+import * as TabsPrimitive from '@radix-ui/react-tabs';
+
+// Source-owned component anatomy with Radix keyboard/focus behavior.
+export const Tabs = TabsPrimitive.Root;
+
+export const TabsList = forwardRef<
+  ElementRef<typeof TabsPrimitive.List>,
+  ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className = '', ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={`tabs-list ${className}`}
+    {...props}
+  />
+));
+TabsList.displayName = 'TabsList';
+
+export const TabsTrigger = forwardRef<
+  ElementRef<typeof TabsPrimitive.Trigger>,
+  ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className = '', ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={`tabs-trigger ${className}`}
+    {...props}
+  />
+));
+TabsTrigger.displayName = 'TabsTrigger';
+
+export const TabsContent = forwardRef<
+  ElementRef<typeof TabsPrimitive.Content>,
+  ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className = '', ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={`tabs-content ${className}`}
+    {...props}
+  />
+));
+TabsContent.displayName = 'TabsContent';

@@ -21,42 +21,39 @@
     "backToTop": "Back to top"
   },
   "hero": {
-    "eyebrow": "GPU SERVERS & WORKSTATIONS FOR ON-PREMISES AI",
+    "eyebrow": "GPU PROCUREMENT & ON-PREMISES AI",
     "title": "Buy the right GPU system.",
-    "titleEmphasis": "Get it running.",
+    "titleEmphasis": "Put AI to work.",
     "description": "Before you sign a vendor quote, we check the hardware against the AI models and workloads you need. Then we can configure, test and hand over a system your team can use.",
     "action": "Request a review call",
     "secondaryAction": "See an example review",
-    "note": "For leaders planning an AI purchase—or trying to put an existing system to work.",
-    "offerEyebrow": "START WITH A CLEAR BUYING DECISION",
-    "offerTitle": "GPU Purchase Review",
-    "offerDescription": "Bring your quote or plans. Get a written recommendation before you commit.",
-    "offerPoints": [
-      "What fits your models and workloads",
-      "Gaps in the quote and setup requirements",
-      "What to validate before placing the order"
-    ],
-    "offerNote": "Review first. Deployment and handover can follow."
+    "note": "Purchase review · System setup · Team handover",
+    "visual": {
+      "eyebrow": "HARDWARE + SOFTWARE + PEOPLE",
+      "title": "Built around your workload.",
+      "description": "GPU servers & AI workstations",
+      "caption": "Conceptual hardware illustration"
+    }
   },
   "pains": {
-    "eyebrow": "THE PROBLEM → THE SOLUTION",
-    "title": "Avoid an expensive purchase that does not do the job.",
-    "description": "AI software changes quickly. Your hardware has to support the work you actually need to do.",
+    "eyebrow": "THE DECISIONS THAT MATTER",
+    "title": "A GPU quote is only part of the decision.",
+    "description": "The hardware, the software and the people using it need to work together. We help you connect the decisions.",
     "items": [
       {
-        "pain": "“Is this GPU quote right for us?”",
+        "pain": "Will this quote deliver what we need?",
         "impact": "Too much hardware wastes budget. Too little—or the wrong configuration—limits what you can run.",
         "solution": "We check the quote against your models, expected users and facility requirements.",
         "outcome": "A written recommendation you can take to leadership."
       },
       {
-        "pain": "“Our data needs to stay in-house.”",
+        "pain": "Can we keep our AI workloads in-house?",
         "impact": "A cloud service may not fit your data requirements. A local system still needs the right capacity and access controls.",
         "solution": "We specify an on-premises system and review how data, models and external services will be handled.",
         "outcome": "A buying and setup plan built around your data requirements."
       },
       {
-        "pain": "“Who will get the system working?”",
+        "pain": "Who gets the system working?",
         "impact": "GPU hardware can sit idle while your team works through software, access and deployment problems.",
         "solution": "We configure the AI software, test agreed workloads, and document the setup for your team.",
         "outcome": "A tested system and a practical handover."
@@ -64,9 +61,9 @@
     ]
   },
   "review": {
-    "eyebrow": "THE FIRST ENGAGEMENT",
-    "title": "Before you sign the quote,",
-    "titleEmphasis": "know what you are buying.",
+    "eyebrow": "START WITH A GPU PURCHASE REVIEW",
+    "title": "A confident decision.",
+    "titleEmphasis": "Before you commit.",
     "description": "The GPU Purchase Review connects your business needs to a hardware decision. Start with the review alone; choose deployment as a separate next step.",
     "name": "GPU Purchase Review",
     "audience": "FOR GPU BUYERS & TECHNICAL LEADERS",
@@ -78,12 +75,74 @@
     ],
     "outcome": "Your deliverable: a written recommendation with the reasons behind it.",
     "scope": "Scope, fee and delivery schedule are agreed before work starts. Hardware, software and deployment costs are separate.",
-    "sampleAction": "See an example review"
+    "sampleAction": "See an example review",
+    "preview": [
+      {
+        "id": "workload",
+        "label": "Workload",
+        "title": "Will it run what you need?",
+        "rows": [
+          {
+            "label": "Models",
+            "value": "Architecture, memory and software support"
+          },
+          {
+            "label": "Demand",
+            "value": "Users, workloads and response-time needs"
+          },
+          {
+            "label": "Constraints",
+            "value": "Data requirements, budget and facilities"
+          }
+        ],
+        "outcome": "Workload-based hardware specifications"
+      },
+      {
+        "id": "quote",
+        "label": "Quote",
+        "title": "What is missing from the quote?",
+        "rows": [
+          {
+            "label": "Hardware",
+            "value": "GPU, memory, storage and networking fit"
+          },
+          {
+            "label": "Readiness",
+            "value": "Power, cooling and installation requirements"
+          },
+          {
+            "label": "Ownership",
+            "value": "Warranty, support and purchasing responsibilities"
+          }
+        ],
+        "outcome": "A written record of gaps, risks and tradeoffs"
+      },
+      {
+        "id": "decision",
+        "label": "Next steps",
+        "title": "A recommendation you can act on.",
+        "rows": [
+          {
+            "label": "Recommend",
+            "value": "The proposed direction and reasons behind it"
+          },
+          {
+            "label": "Validate",
+            "value": "Checks to complete before placing the order"
+          },
+          {
+            "label": "Plan",
+            "value": "Setup, acceptance tests and handover scope"
+          }
+        ],
+        "outcome": "A clear decision record for your leadership team"
+      }
+    ]
   },
   "delivery": {
-    "eyebrow": "FROM PURCHASE TO A WORKING SYSTEM",
-    "title": "We help make the decision.",
-    "titleSecondLine": "Then help put it to work.",
+    "eyebrow": "ONE CONNECTED PATH",
+    "title": "From a buying decision",
+    "titleSecondLine": "to a working system.",
     "description": "Procurement and hands-on AI setup in one engagement path. You can start before a purchase or with hardware you already own.",
     "stages": [
       {
@@ -105,8 +164,8 @@
     "accountability": "Agree what success looks like before delivery: the workloads to run, the users to support and the checks the system must pass."
   },
   "faq": {
-    "eyebrow": "BEFORE WE START",
-    "title": "Straight answers.",
+    "eyebrow": "A FEW PRACTICAL DETAILS",
+    "title": "Good questions.",
     "items": [
       {
         "question": "Can we start with just a quote review?",
@@ -128,30 +187,38 @@
         "question": "Does on-premises AI keep all our data local?",
         "answer": "That depends on the full setup. External APIs, telemetry, model downloads and access controls need to be reviewed. We plan the deployment around your data requirements; running a model locally does not by itself guarantee privacy or compliance."
       }
-    ]
+    ],
+    "titleSecondLine": "Straight answers.",
+    "description": "Every engagement starts with a clear scope and a conversation about your needs."
   },
   "contact": {
-    "eyebrow": "YOUR NEXT STEP",
+    "eyebrow": "LET’S MAKE THE NEXT STEP CLEAR",
     "title": "Bring your quote.",
-    "titleEmphasis": "Or bring your questions.",
+    "titleEmphasis": "Or your questions.",
     "description": "Use a 20-minute conversation to explain what you want to run, where the project stands and whether a GPU Purchase Review is the right next step.",
-    "callTitle": "A clear decision about what comes next.",
+    "callTitle": "Let’s talk about your project.",
     "points": [
       "Discuss your workloads and buying timeline",
       "Identify the decision or setup problem",
       "Confirm the scope needed for a proposal"
     ],
-    "action": "Request a review call",
-    "note": "Opens an email draft. Add your project details and send it to arrange a time.",
+    "action": "Prepare my inquiry",
+    "note": "Opens your email app. Review and send the message to arrange a call.",
     "email": "info@sonarwave.org",
     "phone": "+1 (647) 667-3518",
     "phoneHref": "tel:+16476673518",
     "emailSubject": "GPU Purchase Review call",
-    "emailBody": "Hello SonarWave,\n\nI would like to arrange a 20-minute call.\n\nWhat we want to run:\nOur quote or existing hardware:\nThe decision or setup problem:\nOur timeline:\n\nPlease suggest a time to talk.\n\nThanks!"
+    "emailBody": "Hello SonarWave,\n\nI would like to arrange a 20-minute call.\n\nWhat we want to run:\nOur quote or existing hardware:\nThe decision or setup problem:\nOur timeline:\n\nPlease suggest a time to talk.\n\nThanks!",
+    "projectStages": [
+      "Planning a purchase",
+      "Already have hardware",
+      "Exploring options"
+    ]
   },
   "footer": {
     "phoneAction": "Call",
-    "sampleAction": "Example review"
+    "sampleAction": "Example review",
+    "statement": ["Better decisions.", "AI your team can put to work."]
   },
   "sample": {
     "eyebrow": "ILLUSTRATIVE DELIVERABLE",
@@ -177,5 +244,10 @@
       }
     ],
     "closing": "The outcome is a decision record: what to buy, why it fits, and what still needs to be checked."
-  }
+  },
+  "commitments": [
+    "Requirements before recommendations",
+    "Written scope and deliverables",
+    "Setup, testing and handover"
+  ]
 }

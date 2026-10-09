@@ -1,33 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
-  ArrowUpIcon,
-  CheckIcon,
-  ChevronDownIcon,
-  MenuIcon,
-  XIcon,
-} from '@heroicons/react/outline';
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  ClipboardCheck,
+  Cpu,
+  FileCheck2,
+  Menu,
+  Phone,
+  Server,
+  ShieldCheck,
+  X,
+} from 'lucide-react';
 import Link from 'next/link';
 
 import Brand from '../components/Brand';
+import ProjectInquiry from '../components/ProjectInquiry';
+import ReviewPreview from '../components/ReviewPreview';
 import content from '../config/homepage.json';
 import * as gtag from '../lib/gtag';
 
 const ReviewLink = () => (
   <a className="button button-red" href="#contact">
     {content.hero.action}
-    <ArrowUpIcon className="diagonal-arrow" aria-hidden="true" />
+    <ArrowUpRight aria-hidden="true" />
   </a>
 );
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMobileAction, setShowMobileAction] = useState(false);
-  const contactHref = `mailto:${
-    content.contact.email
-  }?subject=${encodeURIComponent(
-    content.contact.emailSubject
-  )}&body=${encodeURIComponent(content.contact.emailBody)}`;
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const navigation = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const hero = document.querySelector('.hero');
@@ -36,10 +42,9 @@ const App = () => {
     let contactVisible = false;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.target === hero) {
+        if (entry.target === hero)
           pastHero =
             !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
-        }
         if (entry.target === contact) contactVisible = entry.isIntersecting;
       });
       setShowMobileAction(pastHero && !contactVisible);
@@ -49,15 +54,40 @@ const App = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const closeOutside = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (
+        !navigation.current?.contains(target) &&
+        !menuButton.current?.contains(target)
+      )
+        setMenuOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('pointerdown', closeOutside);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('pointerdown', closeOutside);
+    };
+  }, [menuOpen]);
+
   const trackContact = (channel: string) =>
     gtag.event({
       action: 'contact_click',
       category: 'engagement',
       label: `gpu-purchase-review:${channel}`,
     });
+  const stageIcons = [ClipboardCheck, Server, FileCheck2];
 
   return (
-    <div className="sonar-site simplified-site" id="top">
+    <div className="sonar-site" id="top">
       <a className="skip-link" href="#main">
         {content.navigation.skip}
       </a>
@@ -65,6 +95,7 @@ const App = () => {
         <div className="container nav-inner">
           <Brand />
           <button
+            ref={menuButton}
             type="button"
             className="menu-toggle"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -72,15 +103,13 @@ const App = () => {
             aria-controls="main-nav"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <XIcon /> : <MenuIcon />}
+            {menuOpen ? <X /> : <Menu />}
           </button>
           <nav
+            ref={navigation}
             id="main-nav"
             aria-label="Main navigation"
             className={menuOpen ? 'nav-links is-open' : 'nav-links'}
-            onKeyDown={(event) => {
-              if (event.key === 'Escape') setMenuOpen(false);
-            }}
           >
             <a href="#infrastructure" onClick={() => setMenuOpen(false)}>
               {content.navigation.review}
@@ -88,15 +117,18 @@ const App = () => {
             <a href="#process" onClick={() => setMenuOpen(false)}>
               {content.navigation.process}
             </a>
-            <a href="#faq" onClick={() => setMenuOpen(false)}>
-              {content.navigation.faq}
-            </a>
+            <Link
+              href="/sample-deliverable/"
+              onClick={() => setMenuOpen(false)}
+            >
+              Example review
+            </Link>
             <a
               className="button button-small button-dark"
               href="#contact"
               onClick={() => setMenuOpen(false)}
             >
-              {content.navigation.contact}
+              {content.navigation.contact} <ArrowUpRight aria-hidden="true" />
             </a>
           </nav>
         </div>
@@ -104,44 +136,65 @@ const App = () => {
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">
+            <p className="eyebrow hero-eyebrow">
               <span aria-hidden="true" />
               {content.hero.eyebrow}
             </p>
             <h1 id="hero-title">
-              {content.hero.title}
-              <br />
-              <em>{content.hero.titleEmphasis}</em>
+              <span className="hero-title-main">{content.hero.title}</span>
+              <span className="hero-title-accent">
+                {content.hero.titleEmphasis}
+              </span>
             </h1>
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
               <ReviewLink />
               <Link className="text-link" href="/sample-deliverable/">
                 {content.hero.secondaryAction}
+                <ArrowRight aria-hidden="true" />
               </Link>
             </div>
-            <p className="hero-note">{content.hero.note}</p>
+            <p className="hero-note">
+              <span className="note-line" aria-hidden="true" />
+              {content.hero.note}
+            </p>
           </div>
-          <aside
-            className="review-summary"
-            aria-labelledby="review-summary-title"
-          >
-            <p className="eyebrow">{content.hero.offerEyebrow}</p>
-            <h2 id="review-summary-title">{content.hero.offerTitle}</h2>
-            <p>{content.hero.offerDescription}</p>
-            <ul>
-              {content.hero.offerPoints.map((point) => (
-                <li key={point}>
-                  <CheckIcon aria-hidden="true" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <p className="review-summary-note">{content.hero.offerNote}</p>
-          </aside>
+          <figure className="hardware-visual">
+            <div className="hardware-heading">
+              <span className="eyebrow">{content.hero.visual.eyebrow}</span>
+              <span className="hardware-mark" aria-hidden="true">
+                <Cpu />
+              </span>
+            </div>
+            <img
+              className="hardware-image"
+              src="/assets/images/gpu-systems.webp"
+              alt="Conceptual illustration of a GPU server and an AI workstation"
+              width="1400"
+              height="933"
+              fetchPriority="high"
+            />
+            <div className="hardware-bottom">
+              <div>
+                <strong>{content.hero.visual.title}</strong>
+                <span>{content.hero.visual.description}</span>
+              </div>
+            </div>
+            <figcaption>{content.hero.visual.caption}</figcaption>
+          </figure>
         </section>
+        <div className="commitment-strip">
+          <div className="container commitment-inner">
+            {content.commitments.map((item) => (
+              <span key={item}>
+                <Check aria-hidden="true" />
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
 
-        <section className="section container risk-section" id="decisions">
+        <section className="section container" id="decisions">
           <div className="section-heading">
             <div>
               <p className="eyebrow">{content.pains.eyebrow}</p>
@@ -149,53 +202,51 @@ const App = () => {
             </div>
             <p>{content.pains.description}</p>
           </div>
-          <div className="pain-grid">
-            {content.pains.items.map((item) => (
+          <div className="pain-rows">
+            {content.pains.items.map((item, index) => (
               <article key={item.pain}>
-                <h3>{item.pain}</h3>
-                <p>{item.impact}</p>
-                <div className="pain-solution">
-                  <span className="eyebrow">HOW WE HELP</span>
-                  <p>{item.solution}</p>
+                <span className="row-number">0{index + 1}</span>
+                <div className="pain-problem">
+                  <h3>{item.pain}</h3>
+                  <p>{item.impact}</p>
                 </div>
-                <strong>{item.outcome}</strong>
+                <div className="pain-solution">
+                  <p>{item.solution}</p>
+                  <strong>
+                    <ArrowRight aria-hidden="true" />
+                    {item.outcome}
+                  </strong>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="pilot-section" id="infrastructure">
-          <div className="container pilot-layout">
-            <div className="pilot-copy">
-              <p className="eyebrow">{content.review.eyebrow}</p>
+        <section className="review-section" id="infrastructure">
+          <div className="container review-layout">
+            <div className="review-copy">
+              <p className="eyebrow">
+                <span className="section-dot" aria-hidden="true" />
+                {content.review.eyebrow}
+              </p>
               <h2>
                 {content.review.title}
                 <br />
-                <em>{content.review.titleEmphasis}</em>
+                <span>{content.review.titleEmphasis}</span>
               </h2>
               <p>{content.review.description}</p>
-              <Link
-                className="text-link review-example"
-                href="/sample-deliverable/"
-              >
-                {content.review.sampleAction}
-              </Link>
-            </div>
-            <article className="offer-card infrastructure-offer">
-              <p className="eyebrow">{content.review.audience}</p>
-              <h3>{content.review.name}</h3>
-              <ul className="deliverables">
+              <ul className="review-deliverables">
                 {content.review.deliverables.map((item) => (
                   <li key={item}>
-                    <CheckIcon aria-hidden="true" />
+                    <Check aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="assessment-price">{content.review.outcome}</p>
               <ReviewLink />
-              <p className="offer-footnote">{content.review.scope}</p>
-            </article>
+              <p className="scope-note">{content.review.scope}</p>
+            </div>
+            <ReviewPreview />
           </div>
         </section>
 
@@ -212,95 +263,119 @@ const App = () => {
             <p>{content.delivery.description}</p>
           </div>
           <div className="process-grid">
-            {content.delivery.stages.map((stage, index) => (
-              <article key={stage.title}>
-                <span className="step-number">0{index + 1}</span>
-                <h3>{stage.title}</h3>
-                <p>{stage.description}</p>
-                <strong className="step-detail">{stage.deliverable}</strong>
-              </article>
-            ))}
+            {content.delivery.stages.map((stage, index) => {
+              const Icon = stageIcons[index];
+              return (
+                <article key={stage.title}>
+                  <div className="process-top">
+                    <span>0{index + 1}</span>
+                    {Icon && <Icon aria-hidden="true" />}
+                  </div>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.description}</p>
+                  <strong className="process-output">
+                    <span>YOU RECEIVE</span>
+                    {stage.deliverable}
+                  </strong>
+                </article>
+              );
+            })}
           </div>
-          <p className="risk-takeaway">{content.delivery.accountability}</p>
-          <div className="section-action">
-            <ReviewLink />
-          </div>
-        </section>
-
-        <section className="section container faq-layout" id="faq">
-          <div>
-            <p className="eyebrow">{content.faq.eyebrow}</p>
-            <h2>{content.faq.title}</h2>
-          </div>
-          <div className="faq-list">
-            {content.faq.items.map((faq) => (
-              <details key={faq.question}>
-                <summary>
-                  {faq.question}
-                  <ChevronDownIcon aria-hidden="true" />
-                </summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
+          <div className="delivery-promise">
+            <ShieldCheck aria-hidden="true" />
+            <p>{content.delivery.accountability}</p>
+            <a className="text-link" href="#contact">
+              Talk through your project
+              <ArrowUpRight aria-hidden="true" />
+            </a>
           </div>
         </section>
 
-        <section className="contact-section" id="contact">
-          <div className="container contact-layout">
+        <section className="faq-section">
+          <div className="section container faq-layout" id="faq">
             <div>
-              <p className="eyebrow">{content.contact.eyebrow}</p>
+              <p className="eyebrow">{content.faq.eyebrow}</p>
               <h2>
-                {content.contact.title}
+                {content.faq.title}
                 <br />
-                <em>{content.contact.titleEmphasis}</em>
+                {content.faq.titleSecondLine}
               </h2>
-              <p>{content.contact.description}</p>
-            </div>
-            <div className="contact-card">
-              <h3>{content.contact.callTitle}</h3>
-              <ul>
-                {content.contact.points.map((point) => (
-                  <li key={point}>
-                    <CheckIcon aria-hidden="true" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <a
-                className="button button-red"
-                href={contactHref}
-                onClick={() => trackContact('email-draft')}
-              >
-                {content.contact.action}
-                <ArrowUpIcon className="diagonal-arrow" aria-hidden="true" />
+              <p className="faq-aside">{content.faq.description}</p>
+              <a className="text-link" href="#contact">
+                Ask us something else
+                <ArrowUpRight aria-hidden="true" />
               </a>
-              <p className="contact-note">{content.contact.note}</p>
-              <div className="contact-direct">
-                <a
-                  className="contact-email"
-                  href={content.contact.phoneHref}
-                  onClick={() => trackContact('phone')}
-                >
-                  {content.footer.phoneAction} {content.contact.phone}
-                </a>
-                <a
-                  className="contact-email"
-                  href={`mailto:${content.contact.email}`}
-                  onClick={() => trackContact('email')}
-                >
-                  {content.contact.email}
-                </a>
-              </div>
+            </div>
+            <div className="faq-list">
+              {content.faq.items.map((faq) => (
+                <details key={faq.question}>
+                  <summary>
+                    {faq.question}
+                    <ArrowDown aria-hidden="true" />
+                  </summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
+        </section>
+
+        <section className="section container contact-layout" id="contact">
+          <div className="contact-copy">
+            <p className="eyebrow">{content.contact.eyebrow}</p>
+            <h2>
+              {content.contact.title}
+              <br />
+              <span>{content.contact.titleEmphasis}</span>
+            </h2>
+            <p>{content.contact.description}</p>
+            <ol className="call-agenda">
+              {content.contact.points.map((item, index) => (
+                <li key={item}>
+                  <span>0{index + 1}</span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+            <div className="contact-direct">
+              <a
+                href={`mailto:${content.contact.email}`}
+                onClick={() => trackContact('email')}
+              >
+                {content.contact.email}
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                href={content.contact.phoneHref}
+                onClick={() => trackContact('phone')}
+              >
+                <Phone aria-hidden="true" />
+                {content.contact.phone}
+              </a>
+            </div>
+          </div>
+          <ProjectInquiry />
         </section>
       </main>
-      <footer className="container site-footer">
-        <Brand />
-        <p>
-          © {new Date().getFullYear()} {content.brand.legalName}
-        </p>
-        <a href="#top">{content.navigation.backToTop}</a>
+      <footer className="site-footer">
+        <div className="container footer-main">
+          <Brand />
+          <p>
+            {content.footer.statement[0]}
+            <br />
+            {content.footer.statement[1]}
+          </p>
+          <Link className="text-link" href="/sample-deliverable/">
+            Explore the example review
+            <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="container footer-bottom">
+          <p>
+            © {new Date().getFullYear()} {content.brand.legalName}
+          </p>
+          <a href="#top">Back to top ↑</a>
+        </div>
       </footer>
       {showMobileAction && !menuOpen && (
         <div className="mobile-review-action">

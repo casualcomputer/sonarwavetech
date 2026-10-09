@@ -5,8 +5,8 @@ Branch: `simplified-sales-messaging`. Based on the supplied October 9, 2026 CEO/
 ## What changed and why
 
 - One lead offer, **GPU Purchase Review**, makes the first buying decision clear. System setup and handover remain visible as the next stages.
-- The hero names GPU servers/workstations and on-premises AI, then states the outcome: **Buy the right GPU system. Get it running.**
-- Three cards place the pain, business consequence, solution and deliverable together: quote uncertainty, data requirements and hardware that needs setup.
+- The hero names GPU servers/workstations and on-premises AI, then states the outcome: **Buy the right GPU system. Put AI to work.**
+- Three open rows place the pain, business consequence, solution and deliverable together: quote uncertainty, data requirements and hardware that needs setup.
 - Removed standalone training/sales-enablement sections, repeated technical detail and the 200× result from this alternative. Those services remain on main; this branch focuses the homepage on one buyer journey.
 - Kept commercial boundaries and specific deliverables. Added an explicitly illustrative review-format page so the secondary action leads to something useful.
 - Repeated one honest call request and added a mobile action that appears after the hero and hides at contact.
@@ -29,3 +29,9 @@ These facts are omitted from public copy rather than replaced with invented valu
 This is a separate homepage option, not a launch of every proposed page in the brief. Industry landing pages, guides and a founder biography require additional approved facts. No client metrics, privacy/compliance guarantees, zero-downtime promises or universal compatibility claims are published.
 
 `homepage.json` remains the editing source. `CONTENT_GUIDE.md` maps its simplified keys; `SALES_PATH.md` describes the buyer and measurement path. Build and browser verification are recorded with the preview artifacts. The branch is for comparison and has not been merged or deployed to production.
+
+## October 9 design implementation
+
+The redesigned alternative adds a locally hosted DM Sans type system, proportional mobile headings, a conceptual GPU server/workstation hero image, an interactive sample review and a project-stage inquiry composer. Radix provides keyboard-accessible tabs; Lucide provides consistent icons. The paper, navy and red brand palette remains. Motion respects reduced-motion preferences. The example has download and print actions.
+
+The provided LinkedIn feed URL does not identify a founder, so no biography or identity claim has been added. Trust currently comes from explicit scope, visible deliverables, accurate action labels and contact details. Real client proof remains a future content input. See `design-qa.md` for verification.

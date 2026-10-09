@@ -1,0 +1,35 @@
+# SonarWave design direction
+
+## Intent
+
+A premium engineering consultancy for executive and technical buyers of GPU systems. Help a visitor identify their purchasing or setup problem, inspect the review deliverable, and start a qualified conversation. Build on the existing simplified-sales-messaging branch and its factual scope.
+
+## Visual system
+
+- Warm paper background, deep ink typography, a single SonarWave red action color, restrained dark navy offer section.
+- Clear sans-serif display type, comfortable 16–18px body copy, 13–14px supporting text. Mobile heading sizes stay proportional to the viewport.
+- A real subject in the hero: GPU server and workstation, shown as a clearly labelled conceptual illustration.
+- Open layouts and dividers establish hierarchy. Reserve a paper treatment for the example deliverable and a contained surface for the inquiry form.
+- Repeated primary CTA: Request a review call. Secondary action: inspect the illustrative review.
+- Useful interactions: keyboard-accessible review tabs, FAQ disclosure, project-stage selection, editable inquiry and clipboard fallback. Motion is short and supports state; reduced-motion settings disable it.
+
+## Composition
+
+1. Compact brand/navigation header.
+2. Two-column hero: concrete buying promise and CTA beside hardware illustration. Phone layout puts the promise and action first.
+3. Three concise delivery commitments without unsupported client logos or metrics.
+4. Pain → solution rows connecting quote uncertainty, data constraints and deployment ownership to outcomes.
+5. Dark purchase-review section with scope and a paper-like, interactive example report.
+6. Three delivery stages: review, configure, hand over.
+7. FAQ and final project inquiry.
+8. Legal name, consistent contact details and useful footer links.
+
+## Implementation choices
+
+Use Radix Tabs for keyboard navigation and selection semantics, with a small source-owned component wrapper and local design tokens. Use Lucide icons consistently. Keep the existing framework and avoid a Tailwind migration solely for cosmetic changes. Use CSS for short transitions; no additional motion engine is required.
+
+## Evidence and assets
+
+The hardware image was generated for this site with Image Gen on 2026-10-09. It is conceptual imagery, not a real client installation, a vendor product specification or an endorsement. Original: `/workspace/generated_images/exec-b4e4051c-09fb-4344-8355-5b6bdd522a31.png`. Website asset: `public/assets/images/gpu-systems.webp` (1400 × 933, optimized WebP).
+
+Existing SonarWave logo is retained. No founder identity, client proof, prices, delivery promises or booking provider may be invented. The example report is labelled illustrative. Email actions prepare a message; they do not submit an inquiry or book an appointment.

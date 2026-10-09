@@ -2,7 +2,7 @@
 
 **Buyer:** an executive or technical leader planning a GPU server/workstation purchase, or trying to get existing hardware running.
 
-**Promise:** Buy the right GPU system. Get it running.
+**Promise:** Buy the right GPU system. Put AI to work.
 
 **Entry offer:** GPU Purchase Review. The client receives a written workload-based recommendation, quote gaps/risks, facility requirements and validation steps. Deployment and handover are separate follow-on scopes.
 
@@ -10,12 +10,12 @@
 
 1. Recognize the buying situation and the named entry offer in the hero.
 2. See each concern paired with how SonarWave helps and what the buyer receives.
-3. Inspect the review deliverables or the illustrative example.
+3. Inspect the review deliverables using the Workload, Quote and Next steps tabs, or open the downloadable, printable illustrative example.
 4. Understand the setup, workload testing and handover path.
 5. Resolve scope, existing-hardware and data-handling questions.
-6. Request a 20-minute call by email or phone.
+6. Choose a project stage, optionally describe the goal, and prepare an email requesting a 20-minute call. Phone is also available.
 
-A mobile action appears after the hero has passed and disappears when the contact section is visible. Major sections repeat the same call request. The contact draft asks about workloads, the quote/existing hardware, the problem and timeline.
+A mobile action appears after the hero has passed and disappears when the contact section is visible. Major sections repeat the same call request. The contact draft includes the selected stage and the buyer’s optional project description, with workload, quote and timeline prompts when the description is empty. A copy action and manual-copy fallback support visitors without a configured email app.
 
 The current email workflow is operational; calendar booking is not configured. A clicked link is intent, not a received lead or booked call. Existing analytics, when configured, records contact channel with `contact_click` and a `gpu-purchase-review` label.
 
